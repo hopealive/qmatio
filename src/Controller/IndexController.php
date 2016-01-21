@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Controller;
 
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
+use Cake\ORM\TableRegistry;
 
 /**
  * Static content controller
@@ -15,6 +17,8 @@ use Cake\View\Exception\MissingTemplateException;
 class IndexController extends AppController
 {
 
+    
+
     /**
      * Displays a view
      *
@@ -24,6 +28,14 @@ class IndexController extends AppController
      */
     public function index()
     {
-        
+        $this->loadModel('Admins');
+
+//        $admins = TableRegistry::get('Admins');
+        $admins = $this->Admins->find('all')->select(['id', 'login'])->first();
+        foreach ( $admins as $admin ){
+            $logins[] = $admin->login;
+        }
+        $this->set(compact('logins'));
+        $this->set(compact('admins'));
     }
 }

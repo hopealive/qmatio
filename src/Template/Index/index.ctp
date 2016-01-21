@@ -1,3 +1,5 @@
+<?php var_dump ($admins); ?>
+<?php // var_dump ($logins); ?>
 <div class="row col-sm-12 col-xs-12">
 
     <div class="col-sm-6 col-xs-12">

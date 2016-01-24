@@ -18,7 +18,7 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
 
-$this->layout = false;
+$this->layout = 'front';
 
 if (!Configure::read('debug')):
     throw new NotFoundException();
@@ -41,7 +41,7 @@ endif;
     <div id="content">
     <?= $this->Flash->render() ?>
     <section class="container clearfix">
-        <?= $this->fetch('content') ?>
+        <?= $this->fetch('content') ?>page
     </section>
 
     </div>

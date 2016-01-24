@@ -8,7 +8,7 @@
 
 body {
     margin-top: 100px;
-    background-color: #fff;
+    background-color: #222;
 }
 
 @media(min-width:768px) {
@@ -41,13 +41,13 @@ body {
         padding: 10px;
     }
 }
+
 /* Top Navigation */
+
 .top-nav {
     padding: 0 15px;
 }
-.top-nav.navbar-right {
-    background: #fff;
-}
+
 .top-nav>li {
     display: inline-block;
     float: left;
@@ -57,7 +57,7 @@ body {
     padding-top: 15px;
     padding-bottom: 15px;
     line-height: 20px;
-    color: #106838;
+    color: #999;
 }
 
 .top-nav>li>a:hover,
@@ -66,7 +66,7 @@ body {
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
     color: #fff;
-    background-color: #106838;
+    background-color: #000;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -122,8 +122,7 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #106838;
-        color: #fff;
+        background-color: #222;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
@@ -131,32 +130,15 @@ ul.alert-dropdown {
 
     .side-nav>li>a {
         width: 225px;
-        color: #fff;
-    }
-    .navbar-inverse .navbar-nav>li>a {
-        color: #fff;
     }
 
     .side-nav li a:hover,
-    .side-nav li a:active,
     .side-nav li a:focus {
         outline: none;
-        background-color: #5cb85c !important;
+        background-color: #000 !important;
     }
-    
-.navbar-inverse .navbar-nav>.active>a, 
-.navbar-inverse .navbar-nav>.active>a:focus, 
-.navbar-inverse .navbar-nav>.active>a:hover {
-        background-color: #5cb85c !important;
-        color: #fff;
 }
 
-    .navbar-inverse .navbar-nav>li>a:focus, 
-    .navbar-inverse .navbar-nav>li>a:hover {
-        background-color: #5cb85c !important;
-        color: #fff;
-    }
-    
 .side-nav>li>ul {
     padding: 0;
 }
@@ -165,11 +147,11 @@ ul.alert-dropdown {
     display: block;
     padding: 10px 15px 10px 38px;
     text-decoration: none;
-    color: #fff;
+    color: #999;
 }
 
 .side-nav>li>ul>li>a:hover {
-    background-color: #5cb85c !important;
+    color: #fff;
 }
 
 /* Flot Chart Containers */
@@ -243,4 +225,3 @@ ul.alert-dropdown {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
-

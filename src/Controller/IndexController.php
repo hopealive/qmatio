@@ -17,8 +17,6 @@ use Cake\ORM\TableRegistry;
 class IndexController extends AppController
 {
 
-    
-
     /**
      * Displays a view
      *

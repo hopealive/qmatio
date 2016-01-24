@@ -21,8 +21,8 @@
         <title>
             <?= $this->fetch('title') ?>
         </title>
-        <?= $this->Html->meta('icon') ?>
-
+        <link href="/images/favicon.ico" type="image/x-icon" rel="icon"/>
+        <link href="/images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
         <?= $this->fetch('meta') ?>
         <?= $this->fetch('css') ?>
         <?= $this->fetch('script') ?>
@@ -32,6 +32,7 @@
 
         <!-- Custom CSS -->
         <link href="/css/sb-admin.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
 
         <!-- Morris Charts CSS -->
         <link href="/css/plugins/morris.css" rel="stylesheet">
@@ -49,6 +50,13 @@
     <body>
 
 
+
+        <div id="send-mistake-report-block" class="send-mistake-report-block hidden">
+            
+        </div>
+        <div id="send-mistake-report" class="send-mistake-report col-lg-3 col-xs-3 col-sm-1">
+            <a href="#">Повідомити про помилку</a>
+        </div>
 
         <div id="wrapper">
 
@@ -167,6 +175,31 @@
         <!-- /#wrapper -->
 
         <footer>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         </footer>
 
         <!-- Morris Charts JavaScript -->
@@ -177,5 +210,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
         <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/custom.js"></script>
     </body>
 </html>

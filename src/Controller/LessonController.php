@@ -12,4 +12,8 @@ class LessonController extends AppController
     {
         
     }
+    public function lesson($id = NULL)
+    {
+
+    }
 }

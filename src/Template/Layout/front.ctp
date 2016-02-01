@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/front/css/styles.css" />
         <title>
             <?= $this->fetch('title') ?>
@@ -55,19 +56,19 @@
             <div class="navbar-collapse collapse" id="bs-navbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a class="page-scroll" href="#one">Intro</a>
+                        <a class="page-scroll" href="#one">Головна</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#two">Highlights</a>
+                        <a class="page-scroll" href="#two">Проекти</a>
                     </li>
 <!--                    <li>
                         <a class="page-scroll" href="#three">Gallery</a>
                     </li>-->
-                    <li>
+<!--                    <li>
                         <a class="page-scroll" href="#four">Features</a>
-                    </li>
+                    </li>-->
                     <li>
-                        <a class="page-scroll" href="#last">Contact</a>
+                        <a class="page-scroll" href="#contacts">Контакти</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -120,7 +121,9 @@
                 <div class="col-lg-4 col-md-4 text-center">
                     <div class="feature">
                         <i class="icon-lg ion-android-laptop wow fadeIn" data-wow-delay=".3s"></i>
-                        <h3>Електронна Школа Qmatio</h3>
+                        <a href="/index/index" target="_blank">
+                            <h3>Електронна Школа Qmatio</h3>
+                        </a>
                         <p class="text-muted">Проект автоматизації </p>
                     </div>
                 </div>
@@ -141,78 +144,116 @@
             </div>
         </div>
     </section>
+
+
     <section id="three" class="no-padding">
         <div class="container-fluid">
             <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                <h2 class="text-center text-primary">three block </h2>
+                <h2 class="text-center text-primary">QMatio. Школа </h2>
                 <hr>
+                <div class="media wow fadeInRight">
+                    <p>Програмний комплекс для автоматизації та віртуалізації
+                        навчального процессу у системі загальноосвітніх закладів.</p>
+                    <h3>Мета: </h3>
+                        <p>використання автоматизованих систем при
+                        мінімальному навантаженні на викладацький склад та максимально можливому функціоналі.
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="/auth" target="_blank">Вхід для вчителів</a>
+                                <p><b>login: teacher</b><br>
+                                <b>pass: demo</b></p>
+                            </li>
+                            <li>
+                                <a href="/auth" target="_blank">Вхід для менеджерів школи</a>
+                                <p><b>login: manager</b><br>
+                                <b>pass: demo</b></p>
+                            </li>
+                            <li>
+                                <a href="/auth" target="_blank">Вхід для учнів</a>
+                                <p><b>login: pupil</b><br>
+                                <b>pass: demo</b></p>
+                            </li>
+                            <li>
+                                <a href="/auth" target="_blank">Вхід для батьків</a>
+                                <p><b>login: parent</b><br>
+                                <b>pass: demo</b></p>
+                            </li>
+                        </ul>
+                </div>
+
             </div>
             </div>
         </div>
     </section>
+
+
     <section class="container-fluid" id="four">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                <h2 class="text-center text-primary">Features</h2>
+                <h2 class="text-center text-primary">Фнукціонал:</h2>
                 <hr>
+
                 <div class="media wow fadeInRight">
-                    <h3>Simple</h3>
+                    <h3>Для вчителів:</h3>
                     <div class="media-body media-middle">
-                        <p>What could be easier? Get started fast with this landing page starter theme.</p>
+                        <ul>
+                            <li>можливість контролювати наявність учнів ( за умов дозволу батьків можливе автоматичне визначення місцезнаходження учня );</li>
+                            <li>додатковий безпосередній зв”язок з батьками;</li>
+                            <li>неможливість корегування розкладу, домашніх завдань та оцінок дитиною;</li>
+                            <li>автоматизація документації по переведенню дітей з одного класу в наступний;</li>
+                            <li>додаткові можливості професійного спілкування з вчителями в інших школах;</li>
+                            <li>можливість анонімного зв’язку з адміністрацією школи.</li>
+                        </ul>
                     </div>
                     <div class="media-right">
                         <i class="icon-lg ion-ios-bolt-outline"></i>
                     </div>
                 </div>
                 <hr>
+                
                 <div class="media wow fadeIn">
-                    <h3>Free</h3>
+                    <h3>Для учнів:</h3>
                     <div class="media-left">
-                        <a href="#alertModal" data-toggle="modal" data-target="#alertModal"><i class="icon-lg ion-ios-cloud-download-outline"></i></a>
+                        <a href="#alertModal" data-toggle="modal" data-target="#alertModal">
+                            <i class="icon-lg ion-ios-flask-outline"></i>
+                        </a>
                     </div>
                     <div class="media-body media-middle">
-                        <p>Yes, please. Grab it for yourself, and make something awesome with this.</p>
+                        <ul>
+                            <li>акутальна інформація про розклад занять з нагадуванням про зміни;</li>
+                            <li>додаткова інформація про домашні завдання;</li>
+                            <li>додаткові навчальні матеріали.</li>
+                        </ul>
                     </div>
                 </div>
                 <hr>
+
                 <div class="media wow fadeInRight">
-                    <h3>Unique</h3>
+                    <h3>Для батьків:</h3>
                     <div class="media-body media-middle">
-                        <p>Because you don't want your Bootstrap site, to look like a Bootstrap site.</p>
+                        <ul>
+                            <li>отримання інформації про успіхи або проблеми дитини в on-line режимі;</li>
+                            <li>швидкий доступ до вчителів та адміністрації школи;</li>
+                            <li>можливість колективного спілкування в межах батьківського комітету.</li>
+                        </ul>
                     </div>
                     <div class="media-right">
-                        <i class="icon-lg ion-ios-snowy"></i>
-                    </div>
-                </div>
-                <hr>
-                <div class="media wow fadeIn">
-                    <h3>Popular</h3>
-                    <div class="media-left">
                         <i class="icon-lg ion-ios-heart-outline"></i>
                     </div>
-                    <div class="media-body media-middle">
-                        <p>There's good reason why Bootstrap is the most used frontend framework in the world.</p>
-                    </div>
                 </div>
                 <hr>
-                <div class="media wow fadeInRight">
-                    <h3>Tested</h3>
-                    <div class="media-body media-middle">
-                        <p>Bootstrap is matured and well-tested. It's a stable codebase that provides consistency.</p>
-                    </div>
-                    <div class="media-right">
-                        <i class="icon-lg ion-ios-flask-outline"></i>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
-    <aside class="bg-dark">
+
+
+    <aside class="bg-dark" id="contacts">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2 class="text-primary">Get Started</h2>
-                <a href="http://www.bootstrapzero.com/bootstrap-template/landing-zero" target="ext" class="btn btn-default btn-lg wow flipInX">Free Download</a>
+                <h2 class="text-primary">Контакти</h2>
             </div>
             <br>
             <hr/>
@@ -220,31 +261,31 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
-                        <h6 class="wide-space text-center">BOOTSTRAP IS BASED ON THESE STANDARDS</h6>
-                        <div class="col-sm-3 col-xs-6 text-center">
-                            <i class="icon-lg ion-social-html5-outline" title="html 5"></i>
+                        <div class="col-sm-4 col-xs-12 text-center">
+                            <i class="icon-lg fa fa-envelope" title="email"></i>
+                            <p><a href="mailto:websitegdp@gmail.com">websitegdp@gmail.com</a></p>
                         </div>
-                        <div class="col-sm-3 col-xs-6 text-center">
-                            <i class="icon-lg ion-social-sass" title="sass"></i>
+                        <div class="col-sm-4 col-xs-12 text-center">
+                            <i class="icon-lg fa fa-skype" title="skype"></i>
+                            <p><a href="skype:gregzorbov">gregzorbov</a></p>
                         </div>
-                        <div class="col-sm-3 col-xs-6 text-center">
-                            <i class="icon-lg ion-social-javascript-outline" title="javascript"></i>
-                        </div>
-                        <div class="col-sm-3 col-xs-6 text-center">
-                            <i class="icon-lg ion-social-css3-outline" title="css 3"></i>
+                        <div class="col-sm-4 col-xs-12 text-center">
+                            <i class="icon-lg fa fa-phone" title="phone"></i>
+                            <p><a href="javascript:void(0)">+380509523035</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </aside>
+        
     <section id="last">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="margin-top-0 wow fadeIn">Get in Touch</h2>
+                    <h2 class="margin-top-0 wow fadeIn">Зворотній зв'язок</h2>
                     <hr class="primary">
-                    <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
+                    <p>Ми любимо зворотній зв'язок. Заповніть форму нижче і ми зв'яжемося з вами.</p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <form class="contact-form row">
@@ -277,25 +318,31 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-6 col-sm-3 column">
-                    <h4>Information</h4>
+                    <h4>Проекти</h4>
                     <ul class="list-unstyled">
-                        <li><a href="">Products</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Benefits</a></li>
-                        <li><a href="">Developers</a></li>
+                        <li><a href="#three">Електронна Школа Qmatio</a></li>
+                        <li><a href="#two">Місцевий референдум</a></li>
+                        <li><a href="#two">Твій лікар</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-6 col-sm-3 column">
-                    <h4>About</h4>
+                    <h4>Меню</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li>
+                        <a class="page-scroll" href="#one">Головна</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#two">Проекти</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contacts">Контакти</a>
+                    </li>
+<!--                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>-->
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-3 column">
-                    <h4>Stay Posted</h4>
+<!--                    <h4>Stay Posted</h4>
                     <form>
                         <div class="form-group">
                           <input type="text" class="form-control" title="No spam, we promise!" placeholder="Tell us your email">
@@ -303,7 +350,7 @@
                         <div class="form-group">
                           <button class="btn btn-primary" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
                         </div>
-                    </form>
+                    </form>-->
                 </div>
                 <div class="col-xs-12 col-sm-3 text-right">
                     <h4>Follow</h4>
@@ -315,7 +362,7 @@
                 </div>
             </div>
             <br/>
-            <span class="pull-right text-muted small"><a href="http://www.bootstrapzero.com">Landing Zero by BootstrapZero</a> ©2015 Company</span>
+            <span class="pull-right text-muted small"><a href="http://gregzorb.com/">Made By gregzorb.com</a> ©2016 QMatio</span>
         </div>
     </footer>
     <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">

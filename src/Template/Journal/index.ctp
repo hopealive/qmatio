@@ -15,6 +15,10 @@ $datesWithLessons = [
 <!-- /.row -->
 
 <div class="row">
+    <a href="#">Дати домашнє завдання</a>
+</div>
+
+<div class="row">
     <div class="col-lg-9 col-xs-9 col-sm-12">
         <ol class="breadcrumb">
             <li class="active">
@@ -35,6 +39,25 @@ $datesWithLessons = [
                     }
                 ?>
             </tr>
+            <?php for ( $j = 0; $j < 25;  ++$j){ ?>
+            <tr>
+                <td><a href="#">Петренко Сергій Іванович</a></td>
+                <td>5</td>
+                <td>4</td>
+                <td>н</td>
+                <td>5</td>
+                <td>4</td>
+                <td>
+                    <select>
+                        <?php
+                        for ($i = 12; $i > 1; --$i){
+                            echo "<option value=$i>$i</option>";
+                        }
+                        ?>
+                    </select>
+                </td>
+            </tr>
+            <?php } ?>
         </table>
     </div>
 </div>

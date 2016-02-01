@@ -14,6 +14,14 @@ use Cake\View\Exception\MissingTemplateException;
 class AuthController extends AppController
 {
 
+//    $this->view = 'auth';
+
+    public function index()
+    {
+//        return $this->redirect(['controller'=>'Auth', 'action'=>'login']);
+
+    }
+
     public function loginDemo()
     {
         

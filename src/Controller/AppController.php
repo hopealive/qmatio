@@ -56,14 +56,27 @@ class AppController extends Controller
         $this->loadComponent('Auth',
             [
             'loginRedirect' => [
-                'controller' => 'Index',
-                'action' => 'index'
+                'controller' => 'Pages',
+                'action' => 'display',
+                'home'
             ],
             'logoutRedirect' => [
                 'controller' => 'Pages',
                 'action' => 'display',
                 'home'
-            ]
+            ],
+            'loginAction' => [
+                'controller' => 'Users', 
+                'action' => 'login'
+            ],
+            'authenticate' => [
+                'Form' => [
+                    'userModel' => 'Users',                                         
+                    'fields' => ['username' => 'username', 'password' => 'password'],     
+                ]
+            ],
+            'authError' => '¿Bad auth',
+            'storage' => 'Session'
         ]);
     }
 

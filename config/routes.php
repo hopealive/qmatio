@@ -53,10 +53,16 @@ Router::scope('/', function ($routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-    Router::redirect('/teacher/*', ['prefix' => 'teacher', 'controller' => 'auth', 'action' => 'login']);
-    Router::redirect('/manager/*', ['prefix' => 'manager', 'controller' => 'auth', 'action' => 'login']);
-    Router::redirect('/parent/*', ['prefix' => 'parent', 'controller' => 'auth', 'action' => 'login']);
-    Router::redirect('/pupil/*', ['prefix' => 'pupil', 'controller' => 'auth', 'action' => 'login']);
+//    Router::redirect('/teacher/*', ['prefix' => 'teacher', 'controller' => 'auth', 'action' => 'login']);
+//    Router::redirect('/manager/*', ['prefix' => 'manager', 'controller' => 'auth', 'action' => 'login']);
+//    Router::redirect('/parent/*', ['prefix' => 'parent', 'controller' => 'auth', 'action' => 'login']);
+//    Router::redirect('/pupil/*', ['prefix' => 'pupil', 'controller' => 'auth', 'action' => 'login']);
+
+//Router::prefix('admin', ['param' => 'value'], function ($routes) {
+//    $routes->connect('/', ['controller' => 'Pages', 'action' => 'index']);
+//    $routes->connect('/:controller');
+//$routes->fallbacks();
+//});
 
     /**
      * Connect catchall routes for all controllers.

@@ -53,17 +53,53 @@ Router::scope('/', function ($routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-//    Router::redirect('/teacher/*', ['prefix' => 'teacher', 'controller' => 'auth', 'action' => 'login']);
-//    Router::redirect('/manager/*', ['prefix' => 'manager', 'controller' => 'auth', 'action' => 'login']);
-//    Router::redirect('/parent/*', ['prefix' => 'parent', 'controller' => 'auth', 'action' => 'login']);
-//    Router::redirect('/pupil/*', ['prefix' => 'pupil', 'controller' => 'auth', 'action' => 'login']);
+    Router::redirect('/teacher/*', ['prefix' => 'teacher', 'controller' => 'index', 'action' => 'index']);
+    Router::redirect('/manager/*', ['prefix' => 'manager', 'controller' => 'users', 'action' => 'login']);
+    Router::redirect('/parent/*', ['prefix' => 'parent', 'controller' => 'users', 'action' => 'login']);
+    Router::redirect('/pupil/*', ['prefix' => 'pupil', 'controller' => 'users', 'action' => 'login']);
 
-//Router::prefix('admin', ['param' => 'value'], function ($routes) {
-//    $routes->connect('/', ['controller' => 'Pages', 'action' => 'index']);
-//    $routes->connect('/:controller');
-//$routes->fallbacks();
-//});
+    Router::prefix('admin', function($routes) {
+        // All routes here will be prefixed with `/admin`
+        // And have the prefix => admin route element added.
+        $routes->connect('/:controller', ['action' => 'index'], ['routeClass' => 'InflectedRoute']);
+        $routes->connect('/:controller/:action/*', [], ['routeClass' => 'InflectedRoute']);
+        $routes->fallbacks();
+    });
+    Router::prefix('manager', function($routes) {
+        $routes->connect('/:controller', ['action' => 'index'], ['routeClass' => 'InflectedRoute']);
+        $routes->connect('/:controller/:action/*', [], ['routeClass' => 'InflectedRoute']);
+        $routes->fallbacks();
+    });
+    Router::prefix('parent', function($routes) {
+        $routes->connect('/:controller', ['action' => 'index'], ['routeClass' => 'InflectedRoute']);
+        $routes->connect('/:controller/:action/*', [], ['routeClass' => 'InflectedRoute']);
+        $routes->fallbacks();
+    });
+    Router::prefix('pupil', function($routes) {
+        $routes->connect('/:controller', ['action' => 'index'], ['routeClass' => 'InflectedRoute']);
+        $routes->connect('/:controller/:action/*', [], ['routeClass' => 'InflectedRoute']);
+        $routes->fallbacks();
+    });
+Router::plugin('DebugKit', function ($routes) {
+    $routes->prefix('pupil', function ($routes) {
+        $routes->connect('/:controller');
+        $routes->connect('/:controller/:action/*', [], ['routeClass' => 'InflectedRoute']);
+    });
+});
 
+
+    Router::prefix('teacher', function($routes) {
+        $routes->connect('/:controller', ['action' => 'index'], ['routeClass' => 'InflectedRoute']);
+        $routes->connect('/:controller/:action/*', [], ['routeClass' => 'InflectedRoute']);
+        $routes->fallbacks();
+    });
+Router::plugin('DebugKit', function ($routes) {
+    $routes->prefix('teacher', function ($routes) {
+        $routes->connect('/:controller');
+        $routes->connect('/:controller/:action/*', [], ['routeClass' => 'InflectedRoute']);
+    });
+});
+    
     /**
      * Connect catchall routes for all controllers.
      *

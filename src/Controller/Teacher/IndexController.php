@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Teacher;
+
+use App\Controller\AppController;
 
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
@@ -27,5 +29,6 @@ class IndexController extends AppController
     public function index()
     {
         
+//        var_dump ( $this->Auth->user() ); die;
     }
 }

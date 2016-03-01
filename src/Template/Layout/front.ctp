@@ -100,7 +100,7 @@
                     <h2 class="margin-top-0 text-primary">Проект "Я - громадянин Іванковичей"</h2>
                     <br>
                     <p class="text-faded">
-                        Головна ціль проекту - використання електронних засобів для участі у громадському житті Іванковичей.                    
+                        Головна ціль проекту - teacher електронних засобів для участі у громадському житті Іванковичей.
                     </p>
                     <a href="#two" class="btn btn-default btn-xl page-scroll">Перейти до проектів</a>
                 </div>
@@ -161,22 +161,22 @@
                         </p>
                         <ul>
                             <li>
-                                <a href="/auth" target="_blank">Вхід для вчителів</a>
+                                <a href="/teacher" target="_blank">Вхід для вчителів</a>
                                 <p><b>login: teacher</b><br>
                                 <b>pass: demo</b></p>
                             </li>
                             <li>
-                                <a href="/auth" target="_blank">Вхід для менеджерів школи</a>
+                                <a href="/manager" target="_blank">Вхід для менеджерів школи</a>
                                 <p><b>login: manager</b><br>
                                 <b>pass: demo</b></p>
                             </li>
                             <li>
-                                <a href="/auth" target="_blank">Вхід для учнів</a>
+                                <a href="/pupil" target="_blank">Вхід для учнів</a>
                                 <p><b>login: pupil</b><br>
                                 <b>pass: demo</b></p>
                             </li>
                             <li>
-                                <a href="/auth" target="_blank">Вхід для батьків</a>
+                                <a href="/parent" target="_blank">Вхід для батьків</a>
                                 <p><b>login: parent</b><br>
                                 <b>pass: demo</b></p>
                             </li>

@@ -35,6 +35,10 @@ class AppController extends Controller
 //    'Bootstrap.Less',
 //    'Bootstrap.Form'
     ];
+    public $redirects = [
+    'admin' => ['controller' => 'Clients', 'action' => 'statistics'],
+    'user' => ['controller' => 'Clients', 'action' => 'index'],
+];
 
     /**
      * Initialization hook method.
@@ -51,7 +55,6 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-//        $this->loadComponent('Bootstrap.Flash');
         $this->loadComponent('Flash');
         $this->loadComponent('Auth',
             [
@@ -78,12 +81,15 @@ class AppController extends Controller
             'authError' => '¿Bad auth',
             'storage' => 'Session'
         ]);
+
     }
 
     public function beforeFilter(Event $event)
     {
-        $this->Auth->allow(['index', 'view', 'display']);
-//        $this->theme = 'Bootstrap';
+//        $this->Auth->allow(['index', 'view', 'display']);
+       if ($this->request->prefix === null) {
+            $this->Auth->allow();
+       }
     }
 
     /**
@@ -108,8 +114,30 @@ class AppController extends Controller
         if (isset($user['role']) && $user['role'] === 'admin') {
             return true;
         }
+       if ($this->request->prefix === 'teacher') {
+           return (bool)$user['role'] === 'teacher';
+       }
 
         // Default deny
         return false;
     }
+
+    public function login()
+    {
+        $this->render('/Users/login');
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Flash->error(__('Invalid username or password, try again'));
+        }
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
+    }
+
 }

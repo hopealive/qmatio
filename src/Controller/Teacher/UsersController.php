@@ -11,6 +11,13 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
+//    var $layout = 'users';
+
+//    function beforeFilter() {
+//        parent::beforeFilter();
+//        $this->viewBuilder()->layout('users');
+//    }
+
     /**
      * Index method
      *
@@ -18,6 +25,7 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->layout('users');
     }
 
 }

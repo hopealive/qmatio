@@ -1,9 +1,9 @@
 <ul class="nav navbar-nav side-nav">
     <li class="active">
-        <a href="/index/"><i class="fa fa-fw fa-dashboard"></i> Головна</a>
+        <a href="/<?php echo $this->request->prefix; ?>/index/"><i class="fa fa-fw fa-dashboard"></i> Головна</a>
     </li>
             <li>
-                <a href="/journal/"><i class="fa fa-fw fa-book"></i> Журнал</a>
+                <a href="/<?php echo $this->request->prefix; ?>/journal/"><i class="fa fa-fw fa-book"></i> Журнал</a>
             </li>
     <li>
         <a href="/timetable/"><i class="fa fa-fw fa-table"></i> Розклад</a>

@@ -29,16 +29,12 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
     public $components = [
-//    'Bootstrap.Bootstrap'
     ];
     public $helpers = [
-//    'Bootstrap.Less',
-//    'Bootstrap.Form'
     ];
+
     public $redirects = [
-    'admin' => ['controller' => 'Clients', 'action' => 'statistics'],
-    'user' => ['controller' => 'Clients', 'action' => 'index'],
-];
+    ];
 
     /**
      * Initialization hook method.
@@ -59,14 +55,16 @@ class AppController extends Controller
         $this->loadComponent('Auth',
             [
             'loginRedirect' => [
+//                'prefix' => false,
                 'controller' => 'Pages',
                 'action' => 'display',
                 'home'
             ],
             'logoutRedirect' => [
+                'prefix' => '',
                 'controller' => 'Pages',
                 'action' => 'display',
-                'home'
+//                'home'
             ],
             'loginAction' => [
                 'controller' => 'Users', 
@@ -78,7 +76,7 @@ class AppController extends Controller
                     'fields' => ['username' => 'username', 'password' => 'password'],     
                 ]
             ],
-            'authError' => '¿Bad auth',
+            'authError' => 'Неправильний логін або пароль',
             'storage' => 'Session'
         ]);
 
@@ -118,13 +116,16 @@ class AppController extends Controller
            return (bool)$user['role'] === 'teacher';
        }
 
+
         // Default deny
         return false;
     }
 
     public function login()
     {
+        $this->viewBuilder()->layout('users');
         $this->render('/Users/login');
+
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {

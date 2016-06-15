@@ -5,23 +5,19 @@ $webrootThemeFolder = "panel/theme2/bower_components";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+<html>
+    <head>
+        <?= $this->Html->charset() ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            <?= $this->fetch('title') ?>
+        </title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/<?= $webrootThemeFolder; ?>/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/panel/theme2/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/<?= $webrootThemeFolder; ?>/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/panel/theme2/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
     <link href="/panel/theme2/dist/css/timeline.css" rel="stylesheet">
@@ -926,33 +922,22 @@ $webrootThemeFolder = "panel/theme2/bower_components";
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="/<?= $webrootThemeFolder; ?>/jquery/dist/jquery.min.js"></script>
+    <script src="/panel/theme2/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/<?= $webrootThemeFolder; ?>/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/panel/theme2/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="/<?= $webrootThemeFolder; ?>/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/panel/theme2/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="/<?= $webrootThemeFolder; ?>/raphael/raphael-min.js"></script>
-    <script src="/<?= $webrootThemeFolder; ?>/morrisjs/morris.min.js"></script>
+    <script src="/panel/theme2/bower_components/raphael/raphael-min.js"></script>
+    <script src="/panel/theme2/bower_components/morrisjs/morris.min.js"></script>
     <script src="/panel/theme2/js/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="/panel/theme2/dist/js/sb-admin-2.js"></script>
 
-    
-    <style>
-        /*, .navbar*/ 
-        /*#wrapper*/
-        #page-wrapper
-        {
-            height: 500px;
-            background: transparent url('http://science-all.com/images/wallpapers/school-wallpaper/school-wallpaper-11.jpg') repeat-y -200px 0px;
-        }
-    </style>
-    
 </body>
 
 </html>

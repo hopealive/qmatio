@@ -17,6 +17,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\I18n;
 
 /**
  * Application Controller
@@ -55,16 +56,16 @@ class AppController extends Controller
         $this->loadComponent('Auth',
             [
             'loginRedirect' => [
-//                'prefix' => false,
                 'controller' => 'Pages',
                 'action' => 'display',
                 'home'
             ],
             'logoutRedirect' => [
-                'prefix' => '',
-                'controller' => 'Pages',
-                'action' => 'display',
-//                'home'
+//                'prefix' => '',
+//                'controller' => 'Pages',
+//                'action' => 'display',
+                
+                'controller' => '/',
             ],
             'loginAction' => [
                 'controller' => 'Users', 
@@ -79,6 +80,7 @@ class AppController extends Controller
             'authError' => 'Неправильний логін або пароль',
             'storage' => 'Session'
         ]);
+        I18n::locale('uk_UA');
 
     }
 

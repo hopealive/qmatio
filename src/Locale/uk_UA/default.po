@@ -1,0 +1,608 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2016-10-30 19:21+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/AppController.php:135
+msgid "Invalid username or password, try again"
+msgstr ""
+
+#: Controller/UsersController.php:35
+#: Controller/Admin/UsersController.php:52;77
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:38
+msgid "Unable to add the user."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:55;80
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:99
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/Admin/UsersController.php:101
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Teacher/JournalController.php:52;77
+msgid "The journal has been saved."
+msgstr ""
+
+#: Controller/Teacher/JournalController.php:55;80
+msgid "The journal could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Teacher/JournalController.php:99
+msgid "The journal has been deleted."
+msgstr ""
+
+#: Controller/Teacher/JournalController.php:101
+msgid "The journal could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Teacher/PupilController.php:52;77
+msgid "The pupil has been saved."
+msgstr ""
+
+#: Controller/Teacher/PupilController.php:55;80
+msgid "The pupil could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/Teacher/PupilController.php:99
+msgid "The pupil has been deleted."
+msgstr ""
+
+#: Controller/Teacher/PupilController.php:101
+msgid "The pupil could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:3
+#: Template/Admin/Users/edit.ctp:3
+#: Template/Admin/Users/index.ctp:3;18
+#: Template/Admin/Users/view.ctp:3
+#: Template/Pupil/Users/add.ctp:3
+#: Template/Pupil/Users/edit.ctp:3
+#: Template/Pupil/Users/index.ctp:3;18
+#: Template/Pupil/Users/view.ctp:3
+#: Template/Teacher/Journal/add.ctp:3
+#: Template/Teacher/Journal/edit.ctp:3
+#: Template/Teacher/Journal/index.ctp:3;17
+#: Template/Teacher/Journal/view.ctp:3
+#: Template/Teacher/Pupil/add.ctp:3
+#: Template/Teacher/Pupil/edit.ctp:3
+#: Template/Teacher/Pupil/index.ctp:3;16
+#: Template/Teacher/Pupil/view.ctp:3
+msgid "Actions"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:4
+#: Template/Admin/Users/edit.ctp:10
+#: Template/Admin/Users/view.ctp:6
+#: Template/Pupil/Users/add.ctp:4
+#: Template/Pupil/Users/edit.ctp:10
+#: Template/Pupil/Users/view.ctp:6
+msgid "List Users"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:10
+#: Template/Pupil/Users/add.ctp:10
+#: Template/Users/add.ctp:6
+msgid "Add User"
+msgstr ""
+
+#: Template/Admin/Users/add.ctp:17
+#: Template/Admin/Users/edit.ctp:23
+#: Template/Pupil/Users/add.ctp:17
+#: Template/Pupil/Users/edit.ctp:23
+#: Template/Teacher/Journal/add.ctp:18
+#: Template/Teacher/Journal/edit.ctp:24
+#: Template/Teacher/Pupil/add.ctp:20
+#: Template/Teacher/Pupil/edit.ctp:26
+#: Template/Users/add.ctp:13
+#: View/Helper/FormHelper.php:1724
+msgid "Submit"
+msgstr ""
+
+#: Template/Admin/Users/edit.ctp:5
+#: Template/Admin/Users/index.ctp:33
+#: Template/Pupil/Users/edit.ctp:5
+#: Template/Pupil/Users/index.ctp:33
+#: Template/Teacher/Journal/edit.ctp:5
+#: Template/Teacher/Journal/index.ctp:31
+#: Template/Teacher/Pupil/edit.ctp:5
+#: Template/Teacher/Pupil/index.ctp:29
+msgid "Delete"
+msgstr ""
+
+#: Template/Admin/Users/edit.ctp:7
+#: Template/Admin/Users/index.ctp:33
+#: Template/Admin/Users/view.ctp:5
+#: Template/Pupil/Users/edit.ctp:7
+#: Template/Pupil/Users/index.ctp:33
+#: Template/Pupil/Users/view.ctp:5
+#: Template/Teacher/Journal/edit.ctp:7
+#: Template/Teacher/Journal/index.ctp:31
+#: Template/Teacher/Journal/view.ctp:5
+#: Template/Teacher/Pupil/edit.ctp:7
+#: Template/Teacher/Pupil/index.ctp:29
+#: Template/Teacher/Pupil/view.ctp:5
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Admin/Users/edit.ctp:16
+#: Template/Admin/Users/view.ctp:4
+#: Template/Pupil/Users/edit.ctp:16
+#: Template/Pupil/Users/view.ctp:4
+msgid "Edit User"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:4
+#: Template/Admin/Users/view.ctp:7
+#: Template/Pupil/Users/index.ctp:4
+#: Template/Pupil/Users/view.ctp:7
+msgid "New User"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:8
+#: Template/Pupil/Users/index.ctp:8
+msgid "Users"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:31
+#: Template/Pupil/Users/index.ctp:31
+#: Template/Teacher/Journal/index.ctp:29
+#: Template/Teacher/Pupil/index.ctp:27
+msgid "View"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:32
+#: Template/Pupil/Users/index.ctp:32
+#: Template/Teacher/Journal/index.ctp:30
+#: Template/Teacher/Pupil/index.ctp:28
+msgid "Edit"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:41
+#: Template/Pupil/Users/index.ctp:41
+#: Template/Teacher/Journal/index.ctp:39
+#: Template/Teacher/Pupil/index.ctp:37
+msgid "previous"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:43
+#: Template/Pupil/Users/index.ctp:43
+#: Template/Teacher/Journal/index.ctp:41
+#: Template/Teacher/Pupil/index.ctp:39
+msgid "next"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:5
+#: Template/Pupil/Users/view.ctp:5
+msgid "Delete User"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:14
+#: Template/Pupil/Users/view.ctp:14
+msgid "Username"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:18
+#: Template/Pupil/Users/view.ctp:18
+msgid "Password"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:22
+#: Template/Pupil/Users/view.ctp:22
+msgid "Role"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:26
+#: Template/Pupil/Users/view.ctp:26
+#: Template/Teacher/Journal/view.ctp:14
+#: Template/Teacher/Pupil/view.ctp:14
+msgid "Id"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:30
+#: Template/Pupil/Users/view.ctp:30
+msgid "Created"
+msgstr ""
+
+#: Template/Admin/Users/view.ctp:34
+#: Template/Pupil/Users/view.ctp:34
+msgid "Modified"
+msgstr ""
+
+#: Template/Element/menu/teacher.ctp:18
+msgid "Головна"
+msgstr ""
+
+#: Template/Element/menu/teacher.ctp:23
+msgid "Журнал"
+msgstr ""
+
+#: Template/Element/menu/teacher.ctp:28
+msgid "Розклад"
+msgstr ""
+
+#: Template/Element/menu/teacher.ctp:33
+msgid "Учні"
+msgstr ""
+
+#: Template/Element/menu/teacher.ctp:42
+msgid "Зведена інформація: оцінки"
+msgstr ""
+
+#: Template/Teacher/Journal/add.ctp:4
+#: Template/Teacher/Journal/edit.ctp:10
+#: Template/Teacher/Journal/view.ctp:6
+msgid "List Journal"
+msgstr ""
+
+#: Template/Teacher/Journal/add.ctp:10
+msgid "Add Journal"
+msgstr ""
+
+#: Template/Teacher/Journal/edit.ctp:16
+#: Template/Teacher/Journal/view.ctp:4
+msgid "Edit Journal"
+msgstr ""
+
+#: Template/Teacher/Journal/index.ctp:4
+#: Template/Teacher/Journal/view.ctp:7
+msgid "New Journal"
+msgstr ""
+
+#: Template/Teacher/Journal/index.ctp:8
+msgid "Journal"
+msgstr ""
+
+#: Template/Teacher/Journal/view.ctp:5
+msgid "Delete Journal"
+msgstr ""
+
+#: Template/Teacher/Journal/view.ctp:18
+msgid "User Id"
+msgstr ""
+
+#: Template/Teacher/Journal/view.ctp:22
+msgid "Lesson Id"
+msgstr ""
+
+#: Template/Teacher/Journal/view.ctp:26
+msgid "Mark Id"
+msgstr ""
+
+#: Template/Teacher/Journal/view.ctp:30
+msgid "Status Id"
+msgstr ""
+
+#: Template/Teacher/Pupil/add.ctp:4
+#: Template/Teacher/Pupil/edit.ctp:10
+#: Template/Teacher/Pupil/view.ctp:6
+msgid "List Pupil"
+msgstr ""
+
+#: Template/Teacher/Pupil/add.ctp:10
+msgid "Add Pupil"
+msgstr ""
+
+#: Template/Teacher/Pupil/edit.ctp:16
+#: Template/Teacher/Pupil/view.ctp:4
+msgid "Edit Pupil"
+msgstr ""
+
+#: Template/Teacher/Pupil/index.ctp:4
+#: Template/Teacher/Pupil/view.ctp:7
+msgid "New Pupil"
+msgstr ""
+
+#: Template/Teacher/Pupil/index.ctp:8
+msgid "Pupil"
+msgstr ""
+
+#: Template/Teacher/Pupil/view.ctp:5
+msgid "Delete Pupil"
+msgstr ""
+
+#: Template/Teacher/Pupil/view.ctp:18
+msgid "Gender"
+msgstr ""
+
+#: Template/Teacher/Pupil/view.ctp:22
+msgid "Date Birth"
+msgstr ""
+
+#: Template/Teacher/Pupil/view.ctp:26
+msgid "Date Register"
+msgstr ""
+
+#: Template/Teacher/Pupil/view.ctp:31
+msgid "Name"
+msgstr "Ім'я"
+
+#: Template/Teacher/Pupil/view.ctp:35
+msgid "Surname"
+msgstr "Прізвище"
+
+#: Template/Teacher/Pupil/view.ctp:39
+msgid "Patronymic"
+msgstr "По-батькові"
+
+#: Template/Users/login.ctp:6
+msgid "Please enter your username and password"
+msgstr ""
+
+#: Template/Users/login.ctp:14;18
+msgid "Enter your username"
+msgstr ""
+
+#: Template/Users/login.ctp:25;29
+msgid "Enter your password"
+msgstr ""
+
+#: Template/Users/login.ctp:31
+msgid "Login"
+msgstr ""
+
+#: Template/Error/error400.ctp:33
+#: Template/Error/error500.ctp:35
+msgid "Error"
+msgstr ""
+
+#: Template/Error/error400.ctp:35
+msgid "The requested address %s was not found on this server."
+msgstr ""
+
+#: Template/Error/error500.ctp:33
+msgid "An Internal Error Has Occurred"
+msgstr ""
+
+#: Controller/Component/AuthComponent.php:454
+msgid "You are not authorized to access that location."
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:155
+msgid "Missing CSRF token cookie"
+msgstr ""
+
+#: Controller/Component/CsrfComponent.php:159
+msgid "CSRF token mismatch."
+msgstr ""
+
+#: Error/ExceptionRenderer.php:249
+msgid "Not Found"
+msgstr ""
+
+#: Error/ExceptionRenderer.php:251
+msgid "An Internal Error Has Occurred."
+msgstr ""
+
+#: I18n/Number.php:89
+msgid "{0,number,#,###.##} KB"
+msgstr ""
+
+#: I18n/Number.php:91
+msgid "{0,number,#,###.##} MB"
+msgstr ""
+
+#: I18n/Number.php:93
+msgid "{0,number,#,###.##} GB"
+msgstr ""
+
+#: I18n/Number.php:95
+msgid "{0,number,#,###.##} TB"
+msgstr ""
+
+#: I18n/Number.php:87
+msgid "{0,number,integer} Byte"
+msgid_plural "{0,number,integer} Bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:271
+msgid "%s ago"
+msgstr ""
+
+#: I18n/Time.php:272
+msgid "on %s"
+msgstr ""
+
+#: I18n/Time.php:312
+msgid "just now"
+msgstr ""
+
+#: I18n/Time.php:428
+msgid "about a second ago"
+msgstr ""
+
+#: I18n/Time.php:429
+msgid "about a minute ago"
+msgstr ""
+
+#: I18n/Time.php:430
+msgid "about an hour ago"
+msgstr ""
+
+#: I18n/Time.php:431
+msgid "about a day ago"
+msgstr ""
+
+#: I18n/Time.php:432
+msgid "about a week ago"
+msgstr ""
+
+#: I18n/Time.php:433
+msgid "about a year ago"
+msgstr ""
+
+#: I18n/Time.php:442
+msgid "in about a second"
+msgstr ""
+
+#: I18n/Time.php:443
+msgid "in about a minute"
+msgstr ""
+
+#: I18n/Time.php:444
+msgid "in about an hour"
+msgstr ""
+
+#: I18n/Time.php:445
+msgid "in about a day"
+msgstr ""
+
+#: I18n/Time.php:446
+msgid "in about a week"
+msgstr ""
+
+#: I18n/Time.php:447
+msgid "in about a year"
+msgstr ""
+
+#: I18n/Time.php:401
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:404
+msgid "{0} month"
+msgid_plural "{0} months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:407
+msgid "{0} week"
+msgid_plural "{0} weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:410
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:413
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:416
+msgid "{0} minute"
+msgid_plural "{0} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: I18n/Time.php:419
+msgid "{0} second"
+msgid_plural "{0} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Network/Response.php:1438
+msgid "The requested file was not found"
+msgstr ""
+
+#: ORM/RulesChecker.php:49
+msgid "This value is already in use"
+msgstr ""
+
+#: ORM/RulesChecker.php:83
+msgid "This value does not exist"
+msgstr ""
+
+#: Utility/Text.php:724
+msgid "and"
+msgstr ""
+
+#: Validation/Validator.php:102
+msgid "This field is required"
+msgstr ""
+
+#: Validation/Validator.php:103
+msgid "This field cannot be left empty"
+msgstr ""
+
+#: Validation/Validator.php:663
+msgid "The provided value is invalid"
+msgstr ""
+
+#: View/Helper/FormHelper.php:924
+msgid "New %s"
+msgstr ""
+
+#: View/Helper/FormHelper.php:927
+msgid "Edit %s"
+msgstr ""
+
+#: View/Helper/HtmlHelper.php:770
+msgid "Home"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:530
+msgid "January"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:531
+msgid "February"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:532
+msgid "March"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:533
+msgid "April"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:534
+msgid "May"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:535
+msgid "June"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:536
+msgid "July"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:537
+msgid "August"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:538
+msgid "September"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:539
+msgid "October"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:540
+msgid "November"
+msgstr ""
+
+#: View/Widget/DateTimeWidget.php:541
+msgid "December"
+msgstr ""
+
+

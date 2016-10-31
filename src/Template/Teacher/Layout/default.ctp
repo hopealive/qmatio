@@ -55,7 +55,6 @@ uk_UA.utf8
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
                     <?= $this->fetch('content') ?>
                 </div>
             </div>
@@ -79,6 +78,8 @@ uk_UA.utf8
     <!-- Custom Theme JavaScript -->
     <script src="/panel/theme2/dist/js/sb-admin-2.js"></script>
 
-</body>
+    <!-- Custom Lesson CSS -->
+    <link href="/css/style.css" rel="stylesheet">
 
+</body>
 </html>

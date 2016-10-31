@@ -19,6 +19,7 @@ $news    = [
     'Новина',
 ];
 ?>
+<h1 class="page-header"><?= __('Dashboard') ?></h1>
 <div class="row col-sm-12 col-xs-12">
 
     <div class="col-sm-6 col-xs-12">

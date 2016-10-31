@@ -1,9 +1,10 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-lg-12 col-sm-12 col-xs-12 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Journal') ?></li>
         <li><?= $this->Html->link(__('List Journal'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
+<p>&nbsp;</p>
 <div class="journal form large-9 medium-8 columns content">
     <?= $this->Form->create($journal) ?>
     <fieldset>

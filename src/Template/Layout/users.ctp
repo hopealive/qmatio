@@ -72,10 +72,14 @@
         <script src="/js/mistake.js"></script>
         <script>
             $('document').ready(function () {
-                $('.message.error').addClass('bg-danger');
+                $('.message.error').wrap( "<p class='bg-danger'></p>" );
             });
         </script>
-
+        <style>
+            .bg-danger {
+                padding: 10px;
+            }
+        </style>
     </body>
 </html>
 

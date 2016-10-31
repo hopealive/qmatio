@@ -11,6 +11,18 @@ use App\Controller\AppController;
 class JournalController extends AppController
 {
 
+
+    public $uses = [
+        'Pupil'
+    ];
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadModel('Pupil');
+        $this->loadModel('TimeTable');
+    }
+
+    
     /**
      * Index method
      *
@@ -19,6 +31,9 @@ class JournalController extends AppController
     public function index()
     {
         $this->set('journal', $this->paginate($this->Journal));
+        $pupils = $this->Pupil->find('all')
+            ->toArray();
+        $this->set(compact('pupils'));
         $this->set('_serialize', ['journal']);
     }
 

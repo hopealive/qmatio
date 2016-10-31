@@ -61,10 +61,6 @@ class AppController extends Controller
                 'home'
             ],
             'logoutRedirect' => [
-//                'prefix' => '',
-//                'controller' => 'Pages',
-//                'action' => 'display',
-                
                 'controller' => '/',
             ],
             'loginAction' => [
@@ -77,7 +73,7 @@ class AppController extends Controller
                     'fields' => ['username' => 'username', 'password' => 'password'],     
                 ]
             ],
-            'authError' => 'Неправильний логін або пароль',
+            'authError' => __('Invalid username or password, try again'),
             'storage' => 'Session'
         ]);
         I18n::locale('uk_UA');
@@ -86,7 +82,6 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-//        $this->Auth->allow(['index', 'view', 'display']);
        if ($this->request->prefix === null) {
             $this->Auth->allow();
        }
@@ -118,7 +113,6 @@ class AppController extends Controller
            return (bool)$user['role'] === 'teacher';
        }
 
-
         // Default deny
         return false;
     }
@@ -142,5 +136,8 @@ class AppController extends Controller
     {
         return $this->redirect($this->Auth->logout());
     }
+
+
+
 
 }

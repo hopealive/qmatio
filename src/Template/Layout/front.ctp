@@ -121,7 +121,7 @@
                 <div class="col-lg-4 col-md-4 text-center">
                     <div class="feature">
                         <i class="icon-lg ion-android-laptop wow fadeIn" data-wow-delay=".3s"></i>
-                        <a href="/index/index" target="_blank">
+                        <a href="#three">
                             <h3>Електронна Школа Qmatio</h3>
                         </a>
                         <p class="text-muted">Проект автоматизації </p>
@@ -161,22 +161,22 @@
                         </p>
                         <ul>
                             <li>
-                                <a href="/teacher" target="_blank">Вхід для вчителів</a>
+                                <a href="/teacher/users/login" target="_blank">Вхід для вчителів</a>
                                 <p><b>login: teacher</b><br>
                                 <b>pass: demo</b></p>
                             </li>
                             <li>
-                                <a href="/manager" target="_blank">Вхід для менеджерів школи</a>
+                                <a href="/manager/users/login" target="_blank">Вхід для менеджерів школи</a>
                                 <p><b>login: manager</b><br>
                                 <b>pass: demo</b></p>
                             </li>
                             <li>
-                                <a href="/pupil" target="_blank">Вхід для учнів</a>
+                                <a href="/pupil/users/login" target="_blank">Вхід для учнів</a>
                                 <p><b>login: pupil</b><br>
                                 <b>pass: demo</b></p>
                             </li>
                             <li>
-                                <a href="/parent" target="_blank">Вхід для батьків</a>
+                                <a href="/parent/users/login" target="_blank">Вхід для батьків</a>
                                 <p><b>login: parent</b><br>
                                 <b>pass: demo</b></p>
                             </li>

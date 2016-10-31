@@ -192,7 +192,8 @@
             </li>
             <li class="divider"></li>
             <li>
-                <a href="users/logout"><i class="fa fa-fw fa-power-off"></i> Вийти</a>
+                <?php $url = $this->Html->Url->build(['controller'=>'users','action' => 'logout']); ?>
+                <a href="<?= $url; ?>"><i class="fa fa-fw fa-power-off"></i> <?= __('Logout')?></a>
             </li>
         </ul>
     </li>

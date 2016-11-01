@@ -18,13 +18,6 @@ use Cake\ORM\TableRegistry;
 class MessageController extends AppController
 {
 
-    public function initialize()
-    {
-        parent::initialize();
-//        $this->loadComponent('RequestHandler');
-    }
-
-
     /**
      * Displays a view
      *
@@ -39,7 +32,7 @@ class MessageController extends AppController
 
     public function sendUserRequest()
     {
-//print_r ( $this->request->data );
+        //TODO: send message
         $this->viewBuilder()->layout(false);
         $result['status'] = true;
         $this->set('result', $result);

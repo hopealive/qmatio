@@ -68,7 +68,6 @@
         <!--scripts loaded here from cdn for performance -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-        <script src="/front/js/scripts.js"></script>
         <script src="/js/mistake.js"></script>
         <script>
             $('document').ready(function () {

@@ -35,9 +35,6 @@
         $('#galleryImage').attr("src", $(e.relatedTarget).data("src"));
     });
 
-    $('#sendMessageModal').on('show.bs.modal', function (e) {
-    });
-
     function validateSendMessage() {
         contactForm.validate({
             rules: {
@@ -53,11 +50,6 @@
                 message: {
                     required: true
                 }
-            },
-            messages: {
-                email: "Please enter your valid email",
-                required: "*",
-                phone: "Please enter your valid phone",
             },
             submitHandler: function () {
                 $.ajax({

@@ -8,7 +8,8 @@
                 <h4 class="modal-title" id="mistake-modal-label">Помилка</h4>
             </div>
             <div class="modal-body">
-                <textarea class="mistake-body" style="width: 100%" placeholder="Опишіть помилку"></textarea>
+                <input type="hidden" name="mistake-url" class="mistake-input" value="<?= $this->request->here ?>">
+                <textarea name="mistake-body" class="mistake-input mistake-body" style="width: 100%" placeholder="Опишіть помилку"></textarea>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default modal-close" data-dismiss="modal">Закрити</button>

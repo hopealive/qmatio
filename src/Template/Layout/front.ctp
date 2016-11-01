@@ -216,9 +216,7 @@
                 <div class="media wow fadeIn">
                     <h3>Для учнів:</h3>
                     <div class="media-left">
-                        <a href="#alertModal" data-toggle="modal" data-target="#alertModal">
-                            <i class="icon-lg ion-ios-flask-outline"></i>
-                        </a>
+                        <i class="icon-lg ion-ios-flask-outline"></i>
                     </div>
                     <div class="media-body media-middle">
                         <ul>
@@ -291,23 +289,23 @@
                     <form class="contact-form row">
                         <div class="col-md-4">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Name">
+                            <input type="text" name="name" id="name" class="form-control name" placeholder="Name">
                         </div>
                         <div class="col-md-4">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="text" name="email" id="email" class="form-control email" placeholder="Email">
                         </div>
                         <div class="col-md-4">
                             <label></label>
-                            <input type="text" class="form-control" placeholder="Phone">
+                            <input type="text" name="phone" id="phone" class="form-control phone" placeholder="Phone">
                         </div>
                         <div class="col-md-12">
                             <label></label>
-                            <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
+                            <textarea class="form-control message"  name="message" id="message" rows="9" placeholder="Your message here.."></textarea>
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
                         </div>
                     </form>
                 </div>
@@ -348,7 +346,7 @@
                           <input type="text" class="form-control" title="No spam, we promise!" placeholder="Tell us your email">
                         </div>
                         <div class="form-group">
-                          <button class="btn btn-primary" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
+                          <button class="btn btn-primary" data-toggle="modal" data-target="#sendMessageModal" type="button">Subscribe for updates</button>
                         </div>
                     </form>-->
                 </div>
@@ -395,12 +393,13 @@
         </div>
         </div>
     </div>
-    <div id="alertModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="sendMessageModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-sm">
         <div class="modal-content">
         	<div class="modal-body">
-        		<h2 class="text-center">Чудово!</h2>
-        		<p class="text-center">Ваш запит відправлено.Відповідь на Ваш запит ви отримаєте на свою електронну пошту</p>
+        		<h2 class="text-center success-send-message hidden"><?= __('Awesome!') ?></h2>
+        		<p class="text-center success-send-message hidden"><?= __('Your request sended. Look for answer in email.') ?></p>
+        		<h2 class="text-center error-send-message hidden"><?= __('Error!') ?></h2>
         		<br/>
         		<button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">OK <i class="ion-android-close"></i></button>
         	</div>
@@ -418,6 +417,9 @@
     <!--scripts loaded here from cdn for performance -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script src="/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/js/plugins/validate/additional-methods.min.js"></script>
+    <script src="/js/plugins/validate/custom.js"></script>
     <script src="/front/js/scripts.js"></script>
 
     </body>

@@ -28,4 +28,5 @@ class IndexController extends AppController
     {
         $this->viewBuilder()->layout('front');
     }
+
 }

@@ -1,5 +1,9 @@
-(function($) {
+(function ($) {
+
     "use strict";
+
+    var validator = null,
+            contactForm = $('.contact-form');
 
     $('body').scrollspy({
         target: '.navbar-fixed-top',
@@ -11,24 +15,84 @@
             top: 200
         }
     });
-    
+
     new WOW().init();
-    
-    $('a.page-scroll').bind('click', function(event) {
+
+    $('a.page-scroll').bind('click', function (event) {
         var $ele = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($ele.attr('href')).offset().top - 60)
         }, 1450, 'easeInOutExpo');
         event.preventDefault();
     });
-    
-    $('.navbar-collapse ul li a').click(function() {
+
+    $('.navbar-collapse ul li a').click(function () {
         /* always close responsive nav after click */
         $('.navbar-toggle:visible').click();
     });
 
     $('#galleryModal').on('show.bs.modal', function (e) {
-       $('#galleryImage').attr("src",$(e.relatedTarget).data("src"));
+        $('#galleryImage').attr("src", $(e.relatedTarget).data("src"));
+    });
+
+    $('#sendMessageModal').on('show.bs.modal', function (e) {
+    });
+
+    function validateSendMessage() {
+        contactForm.validate({
+            rules: {
+                name: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true,
+                    phoneUA: true
+                },
+                message: {
+                    required: true
+                }
+            },
+            messages: {
+                email: "Please enter your valid email",
+                required: "*",
+                phone: "Please enter your valid phone",
+            },
+            submitHandler: function () {
+                $.ajax({
+                    dataType: "json",
+                    url: "/message/sendUserRequest",
+                    data: contactForm.serialize(),
+                    method: "POST",
+                    success: function (res) {
+                        if (res.result.status == true) {
+                            $('.modal-body .success-send-message').removeClass('hidden');
+                            $('.modal-body .error-send-message').addClass('hidden');
+                            $('#sendMessageModal').modal('show');
+                            $('#last').fadeOut('slow');
+                        } else {
+                            showErrorMessageModal();
+                        }
+                    },
+                    fail: function () {
+                        showErrorMessageModal();
+                        $('#sendMessageModal').modal('show');
+                    }
+                });
+                return false;
+            }
+        });
+    }
+
+    function showErrorMessageModal() {
+        $('.modal-body .success-send-message').addClass('hidden');
+        $('.modal-body .error-send-message').removeClass('hidden');
+        $('#sendMessageModal').modal('show');
+    }
+
+    $('document').ready(function () {
+        validateSendMessage();
     });
 
 })(jQuery);

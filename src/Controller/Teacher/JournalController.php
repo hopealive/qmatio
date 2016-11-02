@@ -34,6 +34,10 @@ class JournalController extends AppController
         $pupils = $this->Pupil->find('all')
             ->toArray();
         $this->set(compact('pupils'));
+
+        $currentLesson = array("name"=> "математика");
+        $this->set(compact('currentLesson'));
+
         $this->set('_serialize', ['journal']);
     }
 

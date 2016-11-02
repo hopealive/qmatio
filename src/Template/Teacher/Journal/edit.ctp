@@ -1,4 +1,4 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -10,7 +10,7 @@
         <li><?= $this->Html->link(__('List Journal'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="journal form large-9 medium-8 columns content">
+<div class="journal form col-lg-12 col-md-12 columns content">
     <?= $this->Form->create($journal) ?>
     <fieldset>
         <legend><?= __('Edit Journal') ?></legend>

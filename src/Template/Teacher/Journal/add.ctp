@@ -5,7 +5,7 @@
     </ul>
 </nav>
 <p>&nbsp;</p>
-<div class="journal form large-9 medium-8 columns content">
+<div class="journal form col-lg-12 col-md-12 columns content">
     <?= $this->Form->create($journal) ?>
     <fieldset>
         <legend><?= __('Add Journal') ?></legend>

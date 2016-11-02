@@ -47,6 +47,7 @@ class PupilController extends AppController
     {
         $pupil = $this->Pupil->newEntity();
         if ($this->request->is('post')) {
+            $this->request->data['date_register'] = date("Y-m-d");
             $pupil = $this->Pupil->patchEntity($pupil, $this->request->data);
             if ($this->Pupil->save($pupil)) {
                 $this->Flash->success(__('The pupil has been saved.'));

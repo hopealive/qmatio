@@ -3,7 +3,6 @@
 namespace App\Controller\Teacher;
 
 use App\Controller\AppController;
-
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
@@ -28,7 +27,27 @@ class IndexController extends AppController
      */
     public function index()
     {
-        
-//        var_dump ( $this->Auth->user() ); die;
+        $lessons = [
+            'Математика, 7А',
+            'Математика, 7А',
+            'Математика, 7А',
+            'Математика, 7А',
+            'Математика, 7А',
+            'Математика, 7А',
+        ];
+        $this->set(compact('lessons'));
+        $news    = [
+            'Батьківські збори',
+            'Засідання вчителів',
+            'Методичні вказівки',
+            'Новина',
+            'Новина',
+            'Новина',
+            'Новина',
+            'Новина',
+            'Новина',
+        ];
+        $this->set(compact('news'));
+
     }
 }

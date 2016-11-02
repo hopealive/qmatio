@@ -1,4 +1,4 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-lg-12 col-sm-12 col-xs-12 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Journal'), ['action' => 'edit', $journal->id]) ?> </li>
@@ -7,8 +7,9 @@
         <li><?= $this->Html->link(__('New Journal'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="journal view large-9 medium-8 columns content">
-    <h3><?= h($journal->id) ?></h3>
+
+<h1 class="page-header"><?= __('Pupil') ?> #<?= h($journal->id) ?></h1>
+<div class="journal view col-lg-12 col-md-12 columns content">
     <table class="vertical-table">
         <tr>
             <th><?= __('Id') ?></th>

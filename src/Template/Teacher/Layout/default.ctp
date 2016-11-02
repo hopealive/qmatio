@@ -27,9 +27,6 @@ uk_UA.utf8
     <!-- Custom CSS -->
     <link href="/panel/theme2/dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="/panel/theme2/bower_components/morrisjs/morris.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -64,22 +61,21 @@ uk_UA.utf8
     <!-- jQuery -->
     <script src="/panel/theme2/bower_components/jquery/dist/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="/panel/theme2/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="/panel/theme2/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="/panel/theme2/bower_components/raphael/raphael-min.js"></script>
-    <script src="/panel/theme2/bower_components/morrisjs/morris.min.js"></script>
-    <script src="/panel/theme2/js/morris-data.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="/panel/theme2/dist/js/sb-admin-2.js"></script>
 
     <!-- Custom Lesson CSS -->
     <link href="/css/style.css" rel="stylesheet">
+
 
 </body>
 </html>

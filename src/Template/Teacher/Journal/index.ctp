@@ -4,10 +4,11 @@
         <li><?= $this->Html->link(__('New Journal'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<h1 class="page-header"><?= __('Journal') ?></h1>
 
-<div class="journal index large-9 medium-8 columns content">
-    <table cellpadding="0" cellspacing="0">
+<div class="journal index col-lg-12 col-xs-12 col-sm-12 columns content">
+    <h3 class="page-header"><?= __('Journal') ?></h3>
+
+    <table cellpadding="0" cellspacing="0" class="table table-striped">
         <thead>
             <tr>
                 <th><?= $this->Paginator->sort('id') ?></th>
@@ -27,22 +28,28 @@
                     <td><?= $this->Number->format($journal->mark_id) ?></td>
                     <td><?= $this->Number->format($journal->status_id) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'),
-                            ['action' => 'view', $journal->id]) ?>
-                        <?= $this->Html->link(__('Edit'),
-                            ['action' => 'edit', $journal->id]) ?>
-                <?= $this->Form->postLink(__('Delete'),
-                    ['action' => 'delete', $journal->id],
-                    ['confirm' => __('Are you sure you want to delete # {0}?',
-                        $journal->id)]) ?>
+                        <?=
+                        $this->Html->link(__('View'),
+                            ['action' => 'view', $journal->id])
+                        ?>
+                        <?=
+                        $this->Html->link(__('Edit'),
+                            ['action' => 'edit', $journal->id])
+                        ?>
+                        <?=
+                        $this->Form->postLink(__('Delete'),
+                            ['action' => 'delete', $journal->id],
+                            ['confirm' => __('Are you sure you want to delete # {0}?',
+                                $journal->id)])
+                        ?>
                     </td>
                 </tr>
-            <?php endforeach; ?>
+<?php endforeach; ?>
         </tbody>
     </table>
     <div class="paginator">
         <ul class="pagination">
-<?= $this->Paginator->prev('< '.__('previous')) ?>
+            <?= $this->Paginator->prev('< '.__('previous')) ?>
 <?= $this->Paginator->numbers() ?>
 <?= $this->Paginator->next(__('next').' >') ?>
         </ul>
@@ -51,70 +58,69 @@
 </div>
 
 
-<?php $lesson           = "математика"; ?>
+
 <?php
 $datesWithLessons = [
     4, 7, 11, 14, 18, 21
 ];
 ?>
 <!-- Page Heading -->
-<div class="row">
-    <div class="col-lg-12 col-xs-12 col-sm-12">
-        <h2 class="page-header">
-<?= __('Current lesson') ?>: "<?php echo $lesson; ?>"</small>
-        </h2>
-    </div>
+<div class="row col-lg-12 col-xs-12 col-sm-12">
+    <h3 class="page-header"><?= __('Current lesson') ?>: <?php echo $currentLesson['name']; ?></h3>
 </div>
 <!-- /.row -->
 <div class="row col-lg-12 col-xs-12 col-sm-12">
     <a class="btn btn-default" href="javascript:void(0)" role="button"><?= __('Give homework') ?></a>
 </div>
 
-<div class="row ">
-    <div class="col-lg-9 col-xs-9 col-sm-12">
-        <ol class="breadcrumb">
-            <li class="active">
-                <i class="fa fa-dashboard"></i> <?= __('Pupils'); ?>
-            </li>
-        </ol>
-    </div>
+<div class="row col-lg-12 col-xs-12 col-sm-12">
+    <ol class="breadcrumb">
+        <li class="active">
+            <i class="fa fa-dashboard"></i> <?= __('Pupils'); ?>
+        </li>
+    </ol>
 </div>
 
-<div class="row">
-    <div class="col-lg-9 col-xs-9 col-sm-12">
-        <table class="table table-striped">
-            <tr>
-                <th><?= __('Pupil'); ?></th>
+<div class="row col-lg-12 col-xs-12 col-sm-12">
+    <table class="table table-striped">
+        <tr>
+            <th><?= __('Pupil'); ?></th>
             <?php
             foreach ($datesWithLessons as $dateWithLessons) {
                 echo "<th>$dateWithLessons</th>";
             }
             ?>
-            </tr>
-                        <?php foreach ($pupils as $pupil) { ?>
-                <tr>
-                    <td><a href="/pupil/view/<?= $pupil->get('id'); ?>">
-    <?= $pupil->get('surname'); ?>&nbsp;
-    <?= $pupil->get('name'); ?>&nbsp;
-    <?= $pupil->get('patronymic'); ?>
-                        </a></td>
-                    <td>Оценка или отсутствует</td>
-                    <td>Оценка или отсутствует</td>
-                    <td>Оценка или отсутствует</td>
-                    <td>Оценка или отсутствует</td>
-                    <td>Оценка или отсутствует</td>
-                    <td>
-                        <select>
-    <?php
-    for ($i = 12; $i > 1; --$i) {
-        echo "<option value=$i>$i</option>";
-    }
+        </tr>
+<?php foreach ($pupils as $pupil) { ?>
+            <tr>
+
+                <td>
+                    <?php
+                    $viewFullName = $pupil->get('surname')." ".
+                        $pupil->get('name')." ".
+                        $pupil->get('patronymic');
+                    ?>
+    <?=
+    $this->Html->link($viewFullName,
+        ['controller' => 'pupil', 'action' => 'view', $pupil->get('id')])
     ?>
-                        </select>
-                    </td>
-                </tr>
+                </td>
+                <td>Оценка или отсутствует</td>
+                <td>Оценка или отсутствует</td>
+                <td>Оценка или отсутствует</td>
+                <td>Оценка или отсутствует</td>
+                <td>Оценка или отсутствует</td>
+                <td>
+                    <select>
+                        <?php
+                        for ($i = 12; $i > 1; --$i) {
+                            echo "<option value=$i>$i</option>";
+                        }
+                        ?>
+                    </select>
+                </td>
+            </tr>
 <?php } ?>
-        </table>
-    </div>
+    </table>
 </div>
 

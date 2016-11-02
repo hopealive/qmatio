@@ -1,0 +1,21 @@
+<nav class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columns" id="actions-sidebar">
+    <ul class="side-nav">
+        <li class="heading"><?= __('Actions') ?></li>
+        <li><?= $this->Html->link(__('List Timetable'), ['action' => 'index']) ?></li>
+    </ul>
+</nav>
+<div class="timetable form col-lg-12 col-md-12 columns content">
+    <?= $this->Form->create($timetable) ?>
+    <fieldset>
+        <legend><?= __('Add Timetable') ?></legend>
+        <?php
+            echo $this->Form->input('lesson_id');
+            echo $this->Form->input('teacher_id');
+            echo $this->Form->input('class_id');
+            echo $this->Form->input('date_table');
+            echo $this->Form->input('date_begin');
+        ?>
+    </fieldset>
+    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+</div>

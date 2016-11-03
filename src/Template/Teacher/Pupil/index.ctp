@@ -6,7 +6,7 @@
 </nav>
 
 <div class="pupil index col-lg-12 col-md-12 columns content">
-    <h3 class="page-header"><?= __('Pupil') ?></h3>
+    <h3 class="page-header"><?= __('Pupils') ?></h3>
     <table cellpadding="0" cellspacing="0" class="table table-striped">
         <thead>
             <tr>

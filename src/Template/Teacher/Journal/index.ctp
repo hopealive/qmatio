@@ -111,13 +111,7 @@ $datesWithLessons = [
                 <td>Оценка или отсутствует</td>
                 <td>Оценка или отсутствует</td>
                 <td>
-                    <select>
-                        <?php
-                        for ($i = 12; $i > 1; --$i) {
-                            echo "<option value=$i>$i</option>";
-                        }
-                        ?>
-                    </select>
+                    <input type="number" min="1" max="12" step="1" pattern="[0-9]*" inputmode="numeric">
                 </td>
             </tr>
 <?php } ?>

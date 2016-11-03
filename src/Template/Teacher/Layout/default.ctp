@@ -2,6 +2,8 @@
 bin/cake bake view --prefix pupil users-->
 <!--bin/cake bake template --prefix admin users
 uk_UA.utf8
+bin/cake bake controller --prefix teacher schoolclass
+bin/cake bake template --prefix teacher schoolclass
 -->
 
 

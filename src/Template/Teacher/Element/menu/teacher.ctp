@@ -12,25 +12,29 @@
                 </div>
                 <!-- /input-group -->
             </li>
-
             <?php $url = $this->Html->Url->build(['controller'=>'index','action' => 'index']); ?>
             <li class="<?= $this->request->here == $url? 'active': '' ?>">
-                <a href="<?= $url ?>"><i class="fa fa-fw fa-dashboard"></i> <?= __('Головна') ?></a>
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-dashboard"></i> <?= __('Home') ?></a>
             </li>
 
             <?php $url = $this->Html->Url->build(['controller'=>'journal','action' => 'index']); ?>
             <li class="<?= $this->request->here == $url? 'active': '' ?>">
-                <a href="<?= $url ?>"><i class="fa fa-fw fa-book"></i> <?= __('Журнал') ?></a>
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-book"></i> <?= __('Journal') ?></a>
             </li>
 
             <?php $url = $this->Html->Url->build(['controller'=>'timetable','action' => 'index']); ?>
             <li class="<?= $this->request->here == $url? 'active': '' ?>">
-                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Розклад') ?></a>
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Timetable') ?></a>
             </li>
             
+            <?php $url = $this->Html->Url->build(['controller'=>'schoolclass','action' => 'index']); ?>
+            <li class="<?= $this->request->here == $url? 'active': '' ?>">
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Classes') ?></a>
+            </li>
+
             <?php $url = $this->Html->Url->build(['controller'=>'pupil','action' => 'index']); ?>
             <li class="<?= $this->request->here == $url? 'active': '' ?>">
-                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Учні') ?></a>
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Pupils') ?></a>
             </li>
             
             <li>

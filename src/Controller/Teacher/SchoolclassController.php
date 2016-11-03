@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\Teacher;
 
 use App\Controller\AppController;
@@ -6,7 +7,6 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
 use Cake\ORM\TableRegistry;
-
 
 /**
  * Schoolclass Controller
@@ -36,11 +36,18 @@ class SchoolclassController extends AppController
      */
     public function view($id = null)
     {
-        $schoolclas = $this->Schoolclass->get($id, [
+        $schoolclas = $this->Schoolclass->get($id,
+            [
             'contain' => []
         ]);
         $this->set('schoolclas', $schoolclas);
         $this->set('_serialize', ['schoolclas']);
+
+
+        $this->loadModel('PupilSchoolclasses');
+        $pupils = $this->PupilSchoolclasses->find('all');
+        $pupils = $pupils->contain(['Pupil']);
+        $this->set(compact('pupils'));
     }
 
     /**
@@ -52,7 +59,8 @@ class SchoolclassController extends AppController
     {
         $schoolclas = $this->Schoolclass->newEntity();
         if ($this->request->is('post')) {
-            $schoolclas = $this->Schoolclass->patchEntity($schoolclas, $this->request->data);
+            $schoolclas = $this->Schoolclass->patchEntity($schoolclas,
+                $this->request->data);
             if ($this->Schoolclass->save($schoolclas)) {
                 $this->Flash->success(__('The schoolclas has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -73,11 +81,13 @@ class SchoolclassController extends AppController
      */
     public function edit($id = null)
     {
-        $schoolclas = $this->Schoolclass->get($id, [
+        $schoolclas = $this->Schoolclass->get($id,
+            [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $schoolclas = $this->Schoolclass->patchEntity($schoolclas, $this->request->data);
+            $schoolclas = $this->Schoolclass->patchEntity($schoolclas,
+                $this->request->data);
             if ($this->Schoolclass->save($schoolclas)) {
                 $this->Flash->success(__('The schoolclas has been saved.'));
                 return $this->redirect(['action' => 'index']);

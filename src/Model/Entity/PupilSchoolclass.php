@@ -4,14 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Schoolclas Entity.
+ * PupilSchoolclass Entity.
  *
  * @property int $id
- * @property string $preifx
- * @property int $class_number
- * @property string $suffix
+ * @property int $class_id
+ * @property \App\Model\Entity\Class $class
+ * @property int $pupil_id
+ * @property \App\Model\Entity\Pupil $pupil
  */
-class Schoolclas extends Entity
+class PupilSchoolclass extends Entity
 {
 
     /**
@@ -27,13 +28,4 @@ class Schoolclas extends Entity
         '*' => true,
         'id' => false,
     ];
-
-    protected $_virtual = ['class_name'];
-
-    public function _getClassName(){
-        return 
-            $this->_properties['prefix'].
-            $this->_properties['class_number'].
-            $this->_properties['suffix'];
-    }
 }

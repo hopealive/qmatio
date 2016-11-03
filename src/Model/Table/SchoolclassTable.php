@@ -43,7 +43,7 @@ class SchoolclassTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->allowEmpty('preifx');
+            ->allowEmpty('prefix');
 
         $validator
             ->add('class_number', 'valid', ['rule' => 'numeric'])

@@ -49,6 +49,10 @@ class PupilController extends AppController
         if ($this->request->is('post')) {
             $this->request->data['date_register'] = date("Y-m-d");
             $pupil = $this->Pupil->patchEntity($pupil, $this->request->data);
+            $pupil->set('date_birth', $this->request->data['date_birth']);
+            $pupil->set('date_register', date("Y-m-d H:i:s"));
+            $pupil->set('date_update', date("Y-m-d H:i:s"));
+
             if ($this->Pupil->save($pupil)) {
                 $this->Flash->success(__('The pupil has been saved.'));
                 return $this->redirect(['action' => 'index']);
@@ -74,6 +78,9 @@ class PupilController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $pupil = $this->Pupil->patchEntity($pupil, $this->request->data);
+            $pupil->set('date_birth', $this->request->data['date_birth']);
+            $pupil->set('date_register', $this->request->data['date_register']);
+            $pupil->set('date_update', date("Y-m-d H:i:s"));
             if ($this->Pupil->save($pupil)) {
                 $this->Flash->success(__('The pupil has been saved.'));
                 return $this->redirect(['action' => 'index']);

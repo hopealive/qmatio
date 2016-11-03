@@ -9,8 +9,8 @@ $(function () {
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size
 $(function () {
-    
-    
+
+
     $(window).bind("load resize", function () {
         topOffset = 50;
         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
@@ -40,10 +40,21 @@ $(function () {
 });
 
 $(function () {
-    
-$('document').ready(function () {
-    $('.date').datepicker();
-});
+
+    $('document').ready(function () {
+        $('.date').datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+        $('.date-month').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true
+        });
+        $('.date-month-year').datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true
+        });
+    });
 
 
 });

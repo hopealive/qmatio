@@ -18,6 +18,7 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 use Cake\I18n\I18n;
+use Cake\I18n\Time;
 
 /**
  * Application Controller
@@ -76,6 +77,14 @@ class AppController extends Controller
             'storage' => 'Session'
         ]);
         I18n::locale('uk_UA');
+
+        Time::setToStringFormat(\IntlDateFormatter::SHORT); 
+
+        Time::setToStringFormat([
+            \IntlDateFormatter::FULL,
+            \IntlDateFormatter::SHORT
+        ]);
+        Time::setToStringFormat('yyyy-MM-dd HH:mm:ss');
 
     }
 

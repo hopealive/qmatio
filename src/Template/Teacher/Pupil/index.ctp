@@ -20,12 +20,12 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($pupil as $pupil): ?>
+            <?php foreach ($pupil as $pupil):  ?>
             <tr>
                 <td><?= $this->Number->format($pupil->id) ?></td>
                 <td><?= $pupil->name ?></td>
                 <td><?= $pupil->surname ?></td>
-                <td><?= $this->Number->format($pupil->gender) ?></td>
+                <td><?= $pupil->gender_name; ?></td>
                 <td><?= h($pupil->date_birth) ?></td>
                 <td><?= h($pupil->date_register) ?></td>
                 <td class="actions">

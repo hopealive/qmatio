@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Parent;
 
+use App\Controller\AppController;
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
@@ -26,6 +27,6 @@ class IndexController extends AppController
      */
     public function index()
     {
-        
+
     }
 }

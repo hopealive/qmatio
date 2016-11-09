@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Pupil;
 
 use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;

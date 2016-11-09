@@ -85,7 +85,6 @@ class AppController extends Controller
             \IntlDateFormatter::SHORT
         ]);
         Time::setToStringFormat('yyyy-MM-dd HH:mm:ss');
-
     }
 
     public function beforeFilter(Event $event)
@@ -117,9 +116,10 @@ class AppController extends Controller
         if (isset($user['role']) && $user['role'] === 'admin') {
             return true;
         }
-       if ($this->request->prefix === 'teacher') {
-           return (bool)$user['role'] === 'teacher';
-       }
+
+        if ( isset($this->request->prefix)){
+            return (bool)$user['role'] === $this->request->prefix;
+        }
 
         // Default deny
         return false;

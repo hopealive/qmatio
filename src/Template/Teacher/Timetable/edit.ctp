@@ -17,8 +17,8 @@
         <?php
             echo $this->Form->input('lesson_id');
             echo $this->Form->input('teacher_id');
-            echo $this->Form->input('class_id');
-            echo $this->Form->input('date_table');
+            echo $this->Form->input('class_id', $classNames ); 
+            echo $this->Form->input('date_table',['class'=>'date']);
             echo $this->Form->input('date_begin');
         ?>
     </fieldset>

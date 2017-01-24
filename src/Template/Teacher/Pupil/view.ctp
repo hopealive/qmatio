@@ -31,15 +31,15 @@
             </tr>
             <tr>
                 <th><?= __('Gender') ?></th>
-                <td><?= $this->Number->format($pupil->gender) ?></td>
+                <td><?= ($pupil->gender == 1? __('Male'): __('Female'))  ?></td>
             </tr>
             <tr>
                 <th><?= __('Date Birth') ?></th>
-                <td><?= h($pupil->date_birth) ?></td>
+                <td><?= $this->Time->format( $pupil->date_birth, \IntlDateFormatter::MEDIUM) ?></td>
             </tr>
             <tr>
                 <th><?= __('Date Register') ?></th>
-                <td><?= h($pupil->date_register) ?></td>
+                <td><?= $this->Time->format( $pupil->date_register, \IntlDateFormatter::MEDIUM) ?></td>
             </tr>
         </table>
     </div>

@@ -1,9 +1,11 @@
-<nav class="col-lg-12 col-sm-12 col-xs-12 columns" id="actions-sidebar"> 
+<nav class="col-lg-12 col-sm-12 col-xs-12 columns breadcrumb" id="actions-sidebar"> 
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Pupil'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
+
+<div class="flash col-lg-12 col-md-12 "><?= $this->Flash->render() ?></div>
 
 <div class="pupil index col-lg-12 col-md-12 columns content">
     <h3 class="page-header"><?= __('Pupils') ?></h3>

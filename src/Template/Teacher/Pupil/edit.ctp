@@ -1,4 +1,4 @@
-<nav class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columns" id="actions-sidebar">
+<nav class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columns breadcrumb" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?=
@@ -39,7 +39,7 @@
         <div class="form-group">
             <label for="gender"><?= __('Gender') ?></label>
             <?=
-            $this->Form->select('gender', [1 => 'Male', 2 => 'Female'],
+            $this->Form->select('gender', [1 => __('Male'), 2 => __('Female')],
                 ['placeholder' => __('Gender'), 'empty' => __('Choose gender'), 'class' => 'form-control']);
             ?>
         </div>
@@ -52,9 +52,17 @@
         </div>
         <?= $this->Form->hidden('date_register'); ?>
 
+        <div class="form-group">
+            <label for="gender"><?= __('Schoolclas') ?></label>
+            <?=
+            $this->Form->select('schoolclas', $classNames,
+                ['value'   =>  $classId,
+                    'placeholder' => __('Schoolclas'), 'empty' => __('Choose schoolclas'), 'class' => 'form-control']);
+            ?>
+        </div>
 
-
+        
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'), ['class' => 'form-control']) ?>
     <?= $this->Form->end() ?>
 </div>

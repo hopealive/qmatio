@@ -10,15 +10,28 @@
         <li><?= $this->Html->link(__('List Schoolclass'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
+
+<div class="flash col-lg-12 col-md-12 "><?= $this->Flash->render() ?></div>
+
 <div class="schoolclass form col-lg-12 col-md-12 columns content">
+    <h3 class="page-header"><?= __('Schoolclass') ?></h3>
     <?= $this->Form->create($schoolclas) ?>
     <fieldset>
         <legend><?= __('Edit Schoolclas') ?></legend>
-        <?php
-            echo $this->Form->input('prefix');
-            echo $this->Form->input('class_number');
-            echo $this->Form->input('suffix');
-        ?>
+
+        <div class="form-group col-lg-4 col-md-4">
+            <?php echo $this->Form->input('prefix', ['type' => 'text', 'class' => 'form-control']); ?>
+        </div>
+        <div class="form-group col-lg-2 col-md-2">
+            <?php echo $this->Form->input('class_number', ['type' => 'text', 'class' => 'form-control']); ?>
+        </div>
+        <div class="form-group col-lg-4 col-md-4">
+            <?php echo $this->Form->input('suffix', ['type' => 'text', 'class' => 'form-control']); ?>
+        </div>
+        <div class="form-group col-lg-2 col-md-2">
+            <?php echo $this->Form->input('is_active', [ 'type' => 'checkbox', 'class' => 'form-control']); ?>
+        </div>
+        <?php echo $this->Form->input('is_deleted', [ 'type' => 'hidden']); ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

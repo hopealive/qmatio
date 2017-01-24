@@ -105,11 +105,11 @@ $datesWithLessons = [
         ['controller' => 'pupil', 'action' => 'view', $pupil->get('id')])
     ?>
                 </td>
-                <td>Оценка или отсутствует</td>
-                <td>Оценка или отсутствует</td>
-                <td>Оценка или отсутствует</td>
-                <td>Оценка или отсутствует</td>
-                <td>Оценка или отсутствует</td>
+                <td>Н</td>
+                <td>Н</td>
+                <td>Н</td>
+                <td>Н</td>
+                <td>Н</td>
                 <td>
                     <input type="number" min="1" max="12" step="1" pattern="[0-9]*" inputmode="numeric">
                 </td>

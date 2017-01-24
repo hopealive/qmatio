@@ -45,7 +45,9 @@ class SchoolclassController extends AppController
 
 
         $this->loadModel('PupilSchoolclasses');
-        $pupils = $this->PupilSchoolclasses->find('all');
+        $pupils = $this->PupilSchoolclasses->find('all',[
+            'conditions'    =>  ['class_id' =>  $id]
+        ]);
         $pupils = $pupils->contain(['Pupil']);
         $this->set(compact('pupils'));
     }

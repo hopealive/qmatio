@@ -1,4 +1,4 @@
-<nav class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columns" id="actions-sidebar">
+<nav class="col-lg-12 col-md-12 col-sm-12 col-xs-12 columns breadcrumb" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Pupil'), ['action' => 'index']) ?></li>

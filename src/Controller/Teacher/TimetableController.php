@@ -2,6 +2,7 @@
 namespace App\Controller\Teacher;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Timetable Controller
@@ -45,6 +46,42 @@ class TimetableController extends AppController
      */
     public function add()
     {
+        $this->Schoolclass = TableRegistry::get('Schoolclass');
+        $schoolclassesItems = $this->Schoolclass->find('all', [
+            'conditions' => ['is_deleted' => false, 'is_active'  =>  true]
+        ]);
+        $classNames = [];
+        if (!empty($schoolclassesItems)) {
+            foreach ($schoolclassesItems as $schoolclassesItem) {
+                $classNames[$schoolclassesItem->id] = $schoolclassesItem->class_name;
+            }
+        }
+        $this->set(compact('classNames'));
+
+        $this->User = TableRegistry::get('Users');
+        $userItems = $this->User->find('all', [
+            'conditions' => ['role' => 'teacher']
+        ]);
+        $teachers = [];
+        if (!empty($userItems)){
+            foreach ( $userItems as $item){
+                $teachers[$item->id] = $item->username;
+            }
+        }
+        $this->set(compact('teachers'));
+
+        $this->Lesson = TableRegistry::get('Lessons');
+        $lessonItems = $this->Lesson->find('all', [
+            'conditions' => []
+        ]);
+        $lessons = [];
+        if (!empty($lessonItems)){
+            foreach ( $lessonItems as $item){
+                $lessons[$item->id] = $item->name;
+            }
+        }
+        $this->set(compact('lessons'));
+
         $timetable = $this->Timetable->newEntity();
         if ($this->request->is('post')) {
             $timetable = $this->Timetable->patchEntity($timetable, $this->request->data);

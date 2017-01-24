@@ -30,7 +30,7 @@ class PupilSchoolclassesTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->hasMany('Classes', [
+        $this->hasMany('Schoolclass', [
             'foreignKey' => 'id',
             'joinType' => 'left'
         ]);
@@ -64,8 +64,8 @@ class PupilSchoolclassesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['class_id'], 'Classes'));
-        $rules->add($rules->existsIn(['pupil_id'], 'Pupils'));
+        $rules->add($rules->existsIn(['class_id'], 'Schoolclass'));
+        $rules->add($rules->existsIn(['pupil_id'], 'Pupil'));
         return $rules;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Teacher;
+namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 use Cake\Core\Configure;

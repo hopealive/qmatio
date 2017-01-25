@@ -14,7 +14,6 @@ class UsersController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->viewBuilder()->layout('users');
     }
 
 

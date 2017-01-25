@@ -17,21 +17,26 @@
                 <a href="<?= $url ?>"><i class="fa fa-fw fa-dashboard"></i> <?= __('Home') ?></a>
             </li>
 
-            <?php $url = $this->Html->Url->build(['controller'=>'journal','action' => 'index']); ?>
+            <?php $url = $this->Html->Url->build(['controller'=>'timetable','action' => 'index']); ?>
             <li class="<?= $this->request->here == $url? 'active': '' ?>">
-                <a href="<?= $url ?>"><i class="fa fa-fw fa-book"></i> <?= __('Journal') ?></a>
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Timetable') ?></a>
+            </li>
+            
+            <?php $url = $this->Html->Url->build(['controller'=>'users','action' => 'index']); ?>
+            <li class="<?= $this->request->here == $url? 'active': '' ?>">
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-book"></i> <?= __('Users') ?></a>
             </li>
 
-            <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Аналітика <i class="fa fa-fw fa-caret-down"></i></a>
-                <ul id="demo" class="collapse">
-
-                    <?php $url = $this->Html->Url->build(['controller'=>'mark','action' => 'index']); ?>
-                    <li class="<?= $this->request->here == $url? 'active': '' ?>">
-                        <a href="<?= $url; ?>"><i class="fa fa-fw fa-table"></i> <?= __('Зведена інформація: оцінки') ?></a>
-                    </li>
-                </ul>
+            <?php $url = $this->Html->Url->build(['controller'=>'schoolclass','action' => 'index']); ?>
+            <li class="<?= $this->request->here == $url? 'active': '' ?>">
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Classes') ?></a>
             </li>
+
+            <?php $url = $this->Html->Url->build(['controller'=>'pupil','action' => 'index']); ?>
+            <li class="<?= $this->request->here == $url? 'active': '' ?>">
+                <a href="<?= $url ?>"><i class="fa fa-fw fa-table"></i> <?= __('Pupils') ?></a>
+            </li>
+
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

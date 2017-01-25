@@ -17,6 +17,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
 use Cake\I18n\I18n;
 use Cake\I18n\Time;
 
@@ -145,6 +146,49 @@ class AppController extends Controller
         return $this->redirect($this->Auth->logout());
     }
 
+
+    protected function getClassNames(){
+        $this->Schoolclass = TableRegistry::get('Schoolclass');
+        $schoolclassesItems = $this->Schoolclass->find('all', [
+            'conditions' => ['is_deleted' => false, 'is_active'  =>  true]
+        ]);
+        $classNames = [];
+        if (!empty($schoolclassesItems)) {
+            foreach ($schoolclassesItems as $schoolclassesItem) {
+                $classNames[$schoolclassesItem->id] = $schoolclassesItem->class_name;
+            }
+        }
+        return $classNames;
+    }
+
+    protected function getTeacherList(){
+        $this->User = TableRegistry::get('Users');
+        $userItems = $this->User->find('all', [
+            'conditions' => ['role' => 'teacher']
+        ]);
+        $teachers = [];
+        if (!empty($userItems)){
+            foreach ( $userItems as $item){
+                $teachers[$item->id] = $item->username;
+            }
+        }
+        return $teachers;
+    }
+
+    protected function getLessons($conditions = []){
+        $this->Lesson = TableRegistry::get('Lessons');
+        $lessonItems = $this->Lesson->find('all', [
+            'conditions' => [$conditions],
+            'order' =>  ['Lessons.name' => 'ASC']
+        ]);
+        $lessons = [];
+        if (!empty($lessonItems)){
+            foreach ( $lessonItems as $item){
+                $lessons[$item->id] = $item->name;
+            }
+        }
+        return $lessons;
+    }
 
 
 

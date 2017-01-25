@@ -122,46 +122,4 @@ class TimetableController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    protected function getClassNames(){
-        $this->Schoolclass = TableRegistry::get('Schoolclass');
-        $schoolclassesItems = $this->Schoolclass->find('all', [
-            'conditions' => ['is_deleted' => false, 'is_active'  =>  true]
-        ]);
-        $classNames = [];
-        if (!empty($schoolclassesItems)) {
-            foreach ($schoolclassesItems as $schoolclassesItem) {
-                $classNames[$schoolclassesItem->id] = $schoolclassesItem->class_name;
-            }
-        }
-        return $classNames;
-    }
-
-    protected function getTeacherList(){
-        $this->User = TableRegistry::get('Users');
-        $userItems = $this->User->find('all', [
-            'conditions' => ['role' => 'teacher']
-        ]);
-        $teachers = [];
-        if (!empty($userItems)){
-            foreach ( $userItems as $item){
-                $teachers[$item->id] = $item->username;
-            }
-        }
-        return $teachers;
-    }
-
-    protected function getLessons(){
-        $this->Lesson = TableRegistry::get('Lessons');
-        $lessonItems = $this->Lesson->find('all', [
-            'conditions' => []
-        ]);
-        $lessons = [];
-        if (!empty($lessonItems)){
-            foreach ( $lessonItems as $item){
-                $lessons[$item->id] = $item->name;
-            }
-        }
-        return $lessons;
-    }
-
 }

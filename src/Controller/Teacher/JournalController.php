@@ -30,13 +30,26 @@ class JournalController extends AppController
      */
     public function index()
     {
-        $this->set('journal', $this->paginate($this->Journal));
-        $pupils = $this->Pupil->find('all')
-            ->toArray();
-        $this->set(compact('pupils'));
+//        $this->set('journal', $this->paginate($this->Journal));
+//        $pupils = $this->Pupil->find('all')
+//            ->toArray();
+//        $this->set(compact('pupils'));
+//
+//        $currentLesson = array("name"=> "математика");
+//        $this->set(compact('currentLesson'));
+        
+        $classNames = $this->getClassNames();
+        $this->set(compact('classNames'));
 
-        $currentLesson = array("name"=> "математика");
-        $this->set(compact('currentLesson'));
+        $lessons = $this->getLessons();
+        $this->set(compact('lessons'));
+
+        //get current lesson and params
+        $lessonId = 0;
+        $this->set(compact('lessonId'));
+
+        $classId = 0;
+        $this->set(compact('classId'));
 
         $this->set('_serialize', ['journal']);
     }

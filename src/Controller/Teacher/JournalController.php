@@ -2,6 +2,7 @@
 namespace App\Controller\Teacher;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
 
 /**
  * Journal Controller
@@ -30,26 +31,70 @@ class JournalController extends AppController
      */
     public function index()
     {
-//        $this->set('journal', $this->paginate($this->Journal));
-//        $pupils = $this->Pupil->find('all')
-//            ->toArray();
-//        $this->set(compact('pupils'));
-//
-//        $currentLesson = array("name"=> "математика");
-//        $this->set(compact('currentLesson'));
-        
-        $classNames = $this->getClassNames();
-        $this->set(compact('classNames'));
-
-        $lessons = $this->getLessons();
-        $this->set(compact('lessons'));
-
         //get current lesson and params
         $lessonId = 0;
         $this->set(compact('lessonId'));
 
         $classId = 0;
         $this->set(compact('classId'));
+
+        //get all names for schoolclasses
+        $classNames = $this->getClassNames();
+        $this->set(compact('classNames'));
+
+        //get all names for lessons
+        $lessons = $this->getLessons();
+        $this->set(compact('lessons'));
+
+        $teacher = $this->Auth->user();
+
+        //find from timetable
+        $conditions = ['teacher_id' => $teacher['id'],
+            'Lesson.is_active'  =>  true,
+            'date_begin <=  '=> date("Y-m-d H:i:s"),//lesson started
+            'date_begin >  '=> date("Y-m-d H:i:s", strtotime("-".$this->schoolSettings['lesson_length']." minutes")),
+        ];
+
+        $this->Timetable = TableRegistry::get('Timetable');
+        $timetableLessons = $this->Timetable->find('all', [
+            'conditions'    =>  $conditions,
+        ])
+            ->hydrate(false)
+            ->join([
+                'table' => 'lessons',
+                'alias' => 'Lesson',
+                'type' => 'INNER',
+                'conditions' => 'Lesson.id = lesson_id',
+            ])
+            ->join([
+                'table' => 'schoolclass',
+                'alias' => 'Schoolclass',
+                'type' => 'INNER',
+                'conditions' => 'Schoolclass.id = class_id',
+            ]
+        )
+        ;
+
+        $timetable = [];
+        if ( !empty($timetableLessons)){
+            foreach ( $timetableLessons as $timetableLesson ){
+//echo $timetableLesson['id']." -- ";
+//echo $timetableLesson['lesson_id']."<br>";
+echo "<pre>";
+print_r ( $timetableLesson );
+echo "</pre>";
+
+//                $timetable[]   =   [
+//                    'lesson_id' =>  $timetableLesson['lesson_id'],
+//                    'class_id' =>  $timetableLessonclass_id,
+//                ];
+            }
+        }
+
+        $pupils = $this->Pupil->find('all')
+            ->toArray();
+        $this->set(compact('pupils'));
+
 
         $this->set('_serialize', ['journal']);
     }

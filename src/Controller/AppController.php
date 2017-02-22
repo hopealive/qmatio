@@ -20,6 +20,8 @@ use Cake\Event\Event;
 use Cake\ORM\TableRegistry;
 use Cake\I18n\I18n;
 use Cake\I18n\Time;
+use Cake\Core\Configure;
+use Cake\Core\Configure\Engine\PhpConfig;
 
 /**
  * Application Controller
@@ -38,6 +40,8 @@ class AppController extends Controller
 
     public $redirects = [
     ];
+
+    public $schoolSettings = [];
 
     /**
      * Initialization hook method.
@@ -86,6 +90,8 @@ class AppController extends Controller
             \IntlDateFormatter::SHORT
         ]);
         Time::setToStringFormat('yyyy-MM-dd HH:mm:ss');
+
+        $this->schoolSettings = $this->_getSchoolSettings();
     }
 
     public function beforeFilter(Event $event)
@@ -159,6 +165,22 @@ class AppController extends Controller
             }
         }
         return $classNames;
+    }
+
+    protected function _getSchoolSettings()
+    {
+        Configure::load('school', 'default');
+        $schoolSettings = Configure::read('SchoolSettings');
+
+        $this->SchoolSettings = TableRegistry::get('SchoolSettings');
+        $schoolSettingItems = $this->SchoolSettings->find('all');
+        if (!empty($schoolSettingItems)) {
+            foreach ($schoolSettingItems as $schoolSettingItem) {
+                $schoolSettings[$schoolSettingItem->name] = $schoolSettingItem->value;
+            }
+        }
+
+        return $schoolSettings;
     }
 
     protected function getTeacherList(){

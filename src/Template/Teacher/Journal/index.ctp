@@ -13,7 +13,7 @@
 
     //chooser for getting journal ( select lesson and class )
 
-    <?= $this->Form->create(null,['class' => 'form-horizontal']) ?>
+    <?= $this->Form->create(null, ['class' => 'form-horizontal']) ?>
     <div class="form-group col-lg-6 col-xs-6 col-sm-6">
         <label for="schoolclas"><?= __('Schoolclas') ?></label>
         <?=
@@ -31,13 +31,22 @@
             'placeholder' => __('Lesson'), 'empty' => __('Choose lesson'), 'class' => 'form-control manual-journal-lesson']);
         ?>
     </div>
-    <?= $this->Form->button(__('Change'), ['class' => 'btn btn-md btn-primary']) ?>
-    <?= $this->Form->button(__('Add'), ['class' => 'btn btn-md btn-warning']) ?>
+    <?= $this->Form->button(__('Change'),
+        ['class' => 'btn btn-md btn-primary']) ?>
+    <?= $this->Form->button(__('Add'),
+        ['class' => 'btn btn-md btn-warning']) ?>
     <?= $this->Form->end() ?>
 
 
-
-
-    Current Journal
-
+    <?php
+    if (!empty($timetable)) {
+        foreach ($timetable as $timetableItem) {
+            $className = $timetableItem['Schoolclass']['prefix'].
+                $timetableItem['Schoolclass']['class_number'].
+                $timetableItem['Schoolclass']['suffix'];
+            echo "<h1>Current lesson: ".$timetableItem['Lesson']['name'].". Class: $className . </h1>";
+        }
+    }
+    ?>
+//<?php // print_r ( $pupils ); ?>
 </div>

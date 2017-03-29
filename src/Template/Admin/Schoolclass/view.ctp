@@ -32,6 +32,9 @@
                 </tr>
                 <?php
                 foreach ($pupils as $pupil) {
+echo "<pre>";
+print_r ($pupil );
+echo "</pre>";
                     $p         = $pupil['pupil'][0];
                     $pupilName = $p['surname']." ".
                         $p['name']." ".

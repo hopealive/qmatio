@@ -31,6 +31,7 @@ class JournalController extends AppController
      */
     public function index()
     {
+        
         //get current lesson and params
         $lessonId = 0;
         $this->set(compact('lessonId'));
@@ -55,10 +56,15 @@ class JournalController extends AppController
             'date_begin >  '=> date("Y-m-d H:i:s", strtotime("-".$this->schoolSettings['lesson_length']." minutes")),
         ];
 
+        //init models
         $this->Timetable = TableRegistry::get('Timetable');
-        $timetableLessons = $this->Timetable->find('all', [
-            'conditions'    =>  $conditions,
-        ])
+        $this->Lesson = TableRegistry::get('Lesson');
+        $this->Schoolclass = TableRegistry::get('Schoolclass');
+        $timetableLessons = $this->Timetable
+            ->find( 'all', ['conditions'    =>  $conditions ])
+            ->autoFields(true)
+            ->select($this->Schoolclass)
+            ->select($this->Lesson)
             ->hydrate(false)
             ->join([
                 'table' => 'lessons',
@@ -71,31 +77,39 @@ class JournalController extends AppController
                 'alias' => 'Schoolclass',
                 'type' => 'INNER',
                 'conditions' => 'Schoolclass.id = class_id',
-            ]
-        )
+            ])
         ;
 
         $timetable = [];
         if ( !empty($timetableLessons)){
-            foreach ( $timetableLessons as $timetableLesson ){
-//echo $timetableLesson['id']." -- ";
-//echo $timetableLesson['lesson_id']."<br>";
-echo "<pre>";
-print_r ( $timetableLesson );
-echo "</pre>";
-
-//                $timetable[]   =   [
-//                    'lesson_id' =>  $timetableLesson['lesson_id'],
-//                    'class_id' =>  $timetableLessonclass_id,
-//                ];
-            }
+            $timetable = $timetableLessons->toArray();
         }
+        $schoolClassIds = array_column($timetable, 'class_id');
 
-        $pupils = $this->Pupil->find('all')
-            ->toArray();
+
+        $this->Pupil = TableRegistry::get('Pupil');
+        $conditions = ['PupilSchoolclass.class_id' => ' IN ('.implode(",",$schoolClassIds).")"];
+        $pupils = $this->Pupil->find('all',[
+//            'conditions'    =>  [$conditions]
+        ])
+            ->join([
+                'table' => 'pupil_schoolclasses',
+                'alias' => 'PupilSchoolclass',
+                'type' => 'INNER',
+                'conditions' => [
+                    'Pupil.id = PupilSchoolclass.pupil_id',
+                    
+                ]
+            ])
+            ->hydrate(false)
+            ->toArray()
+            ;
+echo "<pre>";
+print_r ( $conditions );
+print_r ( $pupils );
+echo "</pre>";
         $this->set(compact('pupils'));
-
-
+        $this->set(compact('timetable'));
         $this->set('_serialize', ['journal']);
     }
 

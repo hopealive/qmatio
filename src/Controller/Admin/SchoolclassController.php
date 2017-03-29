@@ -49,6 +49,7 @@ class SchoolclassController extends AppController
             'conditions'    =>  ['class_id' =>  $id]
         ]);
         $pupils = $pupils->contain(['Pupil']);
+echo "<pre>"; print_r ( $pupils ); echo "</pre>";
         $this->set(compact('pupils'));
     }
 

@@ -12,10 +12,10 @@ use Cake\ORM\TableRegistry;
 class JournalController extends AppController
 {
 
-
     public $uses = [
         'Pupil'
     ];
+    
     public function initialize()
     {
         parent::initialize();
@@ -90,7 +90,7 @@ class JournalController extends AppController
         $this->Pupil = TableRegistry::get('Pupil');
         $conditions = ['PupilSchoolclass.class_id' => ' IN ('.implode(",",$schoolClassIds).")"];
         $pupils = $this->Pupil->find('all',[
-//            'conditions'    =>  [$conditions]
+            'conditions'    =>  [$conditions]
         ])
             ->join([
                 'table' => 'pupil_schoolclasses',

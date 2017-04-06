@@ -5,11 +5,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href=""><?= $this->fetch('title') ?></a>
+    <a class="navbar-brand" href="/"><?= $this->fetch('title') ?></a>
 </div>
 <!-- /.navbar-header -->
 
 <ul class="nav navbar-top-links navbar-right">
+    <li>
+        <span class="text-muted"><?= date("Y-m-d H:i:s") ?></span>
+    </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>

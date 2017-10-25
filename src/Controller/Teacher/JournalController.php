@@ -81,33 +81,31 @@ class JournalController extends AppController
         ;
 
         $timetable = [];
-        if ( !empty($timetableLessons)){
+        if ( !empty($timetableLessons->toArray())){
             $timetable = $timetableLessons->toArray();
         }
         $schoolClassIds = array_column($timetable, 'class_id');
 
-
-        $this->Pupil = TableRegistry::get('Pupil');
-        $conditions = ['PupilSchoolclass.class_id' => ' IN ('.implode(",",$schoolClassIds).")"];
-        $pupils = $this->Pupil->find('all',[
-            'conditions'    =>  [$conditions]
-        ])
-            ->join([
-                'table' => 'pupil_schoolclasses',
-                'alias' => 'PupilSchoolclass',
-                'type' => 'INNER',
-                'conditions' => [
-                    'Pupil.id = PupilSchoolclass.pupil_id',
-                    
-                ]
-            ])
-            ->hydrate(false)
-            ->toArray()
+        $pupils = [];
+        if (!empty($schoolClassIds)) {
+            $this->Pupil = TableRegistry::get('Pupil');
+            $conditions  = ['PupilSchoolclass.class_id' => ' IN ('.implode(",", $schoolClassIds).")"];
+            $pupils      = $this->Pupil->find('all', [
+                    'conditions' => [$conditions]
+                ])
+                ->join([
+                    'table' => 'pupil_schoolclasses',
+                    'alias' => 'PupilSchoolclass',
+                    'type' => 'INNER',
+                    'conditions' => [
+                        'Pupil.id = PupilSchoolclass.pupil_id',
+                    ]
+                ])
+                ->hydrate(false)
+                ->toArray()
             ;
-echo "<pre>";
-print_r ( $conditions );
-print_r ( $pupils );
-echo "</pre>";
+        }
+
         $this->set(compact('pupils'));
         $this->set(compact('timetable'));
         $this->set('_serialize', ['journal']);

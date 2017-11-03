@@ -7,7 +7,16 @@ use Cake\Core\Configure;
 use Cake\Network\Exception\NotFoundException;
 use Cake\View\Exception\MissingTemplateException;
 use Cake\ORM\TableRegistry;
+use Cake\Log\Log;
 
+
+Log::config('admin_logs', [
+    'className' => 'File',
+    'path' => LOGS,
+    'levels' => [],
+    'scopes' => ['schoolclas'],
+    'file' => 'admin_logs.log',
+]);
 /**
  * Schoolclass Controller
  *
@@ -65,6 +74,7 @@ echo "<pre>"; print_r ( $pupils ); echo "</pre>";
             $schoolclas = $this->Schoolclass->patchEntity($schoolclas,
                 $this->request->data);
             if ($this->Schoolclass->save($schoolclas)) {
+                Log::info("admin added a new schoolclass $schoolclas",['scopes' => ['schoolclas']]);
                 $this->Flash->success(__('The schoolclas has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
@@ -92,6 +102,7 @@ echo "<pre>"; print_r ( $pupils ); echo "</pre>";
             $schoolclas = $this->Schoolclass->patchEntity($schoolclas,
                 $this->request->data);
             if ($this->Schoolclass->save($schoolclas)) {
+                Log::info("admin edited schoolclass $schoolclas",['scopes' => ['schoolclas']]);
                 $this->Flash->success(__('The schoolclas has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
@@ -114,6 +125,7 @@ echo "<pre>"; print_r ( $pupils ); echo "</pre>";
         $this->request->allowMethod(['post', 'delete']);
         $schoolclas = $this->Schoolclass->get($id);
         if ($this->Schoolclass->delete($schoolclas)) {
+            Log::info("admin delete schoolclass $schoolclas",['scopes' => ['schoolclas']]);
             $this->Flash->success(__('The schoolclas has been deleted.'));
         } else {
             $this->Flash->error(__('The schoolclas could not be deleted. Please, try again.'));

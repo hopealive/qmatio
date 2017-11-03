@@ -4,6 +4,16 @@ namespace App\Controller\Admin;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\Log\Log;
+
+
+Log::config('admin_logs', [
+    'className' => 'File',
+    'path' => LOGS,
+    'levels' => [],
+    'scopes' => ['pupil'],
+    'file' => 'admin_logs.log',
+]);
 
 /**
  * Pupil Controller
@@ -57,6 +67,7 @@ class PupilController extends AppController
             $pupil->set('date_update', date("Y-m-d H:i:s"));
 
             if ($this->Pupil->save($pupil)) {
+                Log::info("admin added a new pupil $pupil",['scopes' => ['pupil']]);
                 $this->Flash->success(__('The pupil has been saved.'));
                 return $this->redirect(['action' => 'index']);
             } else {
@@ -114,7 +125,7 @@ class PupilController extends AppController
 
             $pupilSchoolclass->pupil_id = $id;
             $pupilSchoolclass->class_id = $this->request->data['schoolclas'];
-
+            Log::info("admin edited pupil $pupil",['scopes' => ['pupil']]);
             if (!$this->Pupil->save($pupil) ) {
                 $this->Flash->error(__('The pupil could not be saved. Please, try again.'));
                 return $this->redirect($this->referer());
@@ -142,6 +153,7 @@ class PupilController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $pupil = $this->Pupil->get($id);
         if ($this->Pupil->delete($pupil)) {
+            Log::info("admin delete pupil $pupil",['scopes' => ['pupil']]);
             $this->Flash->success(__('The pupil has been deleted.'));
         } else {
             $this->Flash->error(__('The pupil could not be deleted. Please, try again.'));

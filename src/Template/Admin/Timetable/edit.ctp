@@ -42,27 +42,20 @@
         <div class="form-group">
             <label for="date_birth"><?= __('Date and time begin') ?></label>
             <?=
-            $this->Form->datetime('date_begin',
-                [h($timetable->date_begin),
+            $this->Form->text('date_begin',
+                ['placeholder' => ($timetable->date_begin),
                     'class' => 'date-month-year-hour-minute form-control']);
             ?>
         </div>
 
             <div class="form-group">
             <label for="date_birth"><?= __('Date and time table') ?></label>
-            <?=
-            $this->Form->datetime ('date_table',
-                [h($timetable->date_table),
-                    'class' => 'date-month-year-hour-minute form-control']);
-            ?>
+             <?=
+             $this->Form->text('date_table',
+                 ['placeholder' => ($timetable->date_table), 'class' => 'date-month-year-hour-minute form-control']);
+             ?>
+
         </div>
-
-
-
-
-
-
-
 
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

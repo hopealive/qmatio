@@ -54,8 +54,18 @@ $(function () {
             changeMonth: true,
             changeYear: true
         });
+
     });
-
-
 });
 
+
+
+$('document').ready(function () {
+    $(function () {
+        $('.date-month-year-hour-minute').datetimepicker({
+            format:'YYYY-MM-DD HH:mm:ss',
+            useCurrent: false,
+            locale: 'uk'
+        });
+    });
+});

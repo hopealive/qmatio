@@ -17,6 +17,7 @@ bin/cake bake template --prefix teacher schoolclass
             <?= $this->fetch('title') ?>
         </title>
 
+
     <!-- Bootstrap Core CSS -->
     <link href="/panel/theme2/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,6 +32,7 @@ bin/cake bake template --prefix teacher schoolclass
 
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,6 +62,7 @@ bin/cake bake template --prefix teacher schoolclass
         </div>
     </div>
 
+
     <!-- jQuery -->
     <script src="/panel/theme2/bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -77,6 +80,12 @@ bin/cake bake template --prefix teacher schoolclass
 
     <!-- Custom Lesson CSS -->
     <link href="/css/style.css" rel="stylesheet">
+
+
+      <script language="JavaScript" type="text/javascript" src="/panel/theme2/bower_components/moment/min/moment-with-locales.js"></script>
+      <script language="JavaScript" type="text/javascript" src="/panel/theme2/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+      <link rel="stylesheet" href="/panel/theme2/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/panel/theme2/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 
 
 </body>
